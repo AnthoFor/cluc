@@ -11,7 +11,7 @@
 
     <body>
         <!-- Hided until scroll down -->
-        <header id="header">
+        <header id="header" class="d-none">
             <nav>
                 <ul>
                     <li>Accueil</li>
@@ -23,8 +23,15 @@
             </nav>
         </header>
         <main>
-            <section class="container" id="section1">
-                <img src="assets/img/logoCluc.svg">
+            <section class="nobsContainer d-flex flex-column justify-content-around p-2" id="section1">
+                <div class="col h-50 d-flex justify-content-center align-items-center">
+                    <img class="logoTest" src="assets/img/logoCluc.svg">
+                </div>
+                <div class="col h-50 p-5 d-flex flex-column align-items-center">
+                    <p class="nobsJustifyText">Bienvenue sur le site de l'atelier Cluc - retouche et création.</p>
+                    <p class="nobsJustifyText">Je m'occupe de faire tatati tatata ... </p>
+                    <p class="nobsJustifyText align-self-stretch">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis quidem excepturi quasi, omnis voluptates non repellendus autem dignissimos saepe architecto consequuntur hic ad sapiente minima et atque repellat explicabo soluta.</p>
+                </div>
             </section>
             <section class="container" id="section2">
             </section>
