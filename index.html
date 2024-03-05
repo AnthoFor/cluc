@@ -4,7 +4,8 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+        <!-- <link rel="stylesheet" href="assets/css/bootstrap.min.css"> -->
+        <link rel="stylesheet" href="assets/css/custom.css">
         <link rel="stylesheet" href="assets/css/style.css">
         <title>Atelier Cluc</title>
     </head>
@@ -22,10 +23,10 @@
                 </ul>
             </nav>
         </header>
-        <main>
+        <main id="sectionContainer">
             <section class="nobsContainer d-flex flex-column justify-content-around p-2" id="section1">
                 <div class="col h-50 d-flex justify-content-center align-items-center">
-                    <img class="logoTest" src="assets/img/logoCluc.svg">
+                    <img class="logoTest" src="assets/img/logoCluc.svg" alt="Logo Atelier Cluc">
                 </div>
                 <div class="col h-50 p-5 d-flex flex-column align-items-center">
                     <p class="nobsJustifyText">Bienvenue sur le site de l'atelier Cluc - retouche et création.</p>
@@ -33,16 +34,33 @@
                     <p class="nobsJustifyText align-self-stretch">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis quidem excepturi quasi, omnis voluptates non repellendus autem dignissimos saepe architecto consequuntur hic ad sapiente minima et atque repellat explicabo soluta.</p>
                 </div>
             </section>
-            <section class="container" id="section2">
+            <section class="nobsContainer border border-black" id="section2">
+                <div class="commonFrame d-flex flex-column align-items-center">
+                    <!-- <div class="position-relative">
+                        <div class="position-absolute top-0 start-0">
+
+                        </div>
+                    </div> -->
+                    <div class="w-100 sectionTitle position-relative">
+                        <h2 class="position-absolute top-10 start-10 titleBorder">Prestation</h2>
+                    </div>
+                    <div class="sectionContent">
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eum nemo voluptas eius culpa, libero quo quidem molestiae officiis rem voluptate non ullam. Error consequatur hic enim debitis non consequuntur perferendis.</p>
+                    </div>
+                </div>
             </section>
-            <section class="container" id="section3">
+            <section class="nobsContainer border border-black" id="section3">
+                <p>section 3</p>
             </section>
-            <section class="container" id="section4">
+            <section class="nobsContainer border border-black" id="section4">
+                <p>section 4</p>
             </section>
-            <section class="container" id="section5">
+            <section class="nobsContainer border border-black" id="section5">
+                <p>section 5</p>
             </section>
         </main>
-        <script src="assets/js/script.js"></script>
+        <script type="module" src="assets/js/script.js"></script>
+        <script type="module" src="assets/js/functions.js"></script>
         <script src="assets/js/bootstrap.bundle.min.js"></script>
     </body>
 

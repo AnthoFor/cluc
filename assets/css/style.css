@@ -6,18 +6,10 @@
     font-size: 12px;
 }
 
-body {
-    height: 100vh;
-    /* background-color: brown; */
-}
-
 header {
     height: 10vh;
 }
 
-main {
-    max-height: 90vh;
-}
 .nobsContainer {
     height: 100vh;
 }
@@ -28,4 +20,43 @@ main {
 
 .nobsJustifyText {
     text-align: justify;
+}
+
+@keyframes dropHeight {
+    from {
+        height: 100vh;
+    }
+    to {
+        height: 0vh;
+    }
+}
+
+.dropHeight {
+    animation: dropHeight 1s ease-in-out forwards;
+}
+
+@keyframes getHeight {
+    from {
+        height: 0vh;
+    }
+    to {
+        height: 100vh;
+    }
+}
+
+.getHeight {
+    animation: getHeight 1s ease-in-out forwards;
+}
+
+/* SECTIONS */
+.commonFrame {
+    height: 70vh;
+}
+
+.titleBorder {
+    border: 1px solid gold;
+}
+
+.sectionContent {
+    background-color: #4A7767;
 }
