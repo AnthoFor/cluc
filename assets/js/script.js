@@ -4,3 +4,5 @@ import { goesToSection, toggleScrollListener } from "./functions.js";
 window.addEventListener('scroll', function(e) {
     goesToSection();
 });
+
+AOS.init();
