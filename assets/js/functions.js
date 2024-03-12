@@ -51,6 +51,13 @@ function handleScroll(event) {
     event.preventDefault();
 }
 
+export function recalcOnResize() {
+vh = window.innerHeight;
+totalSection = document.querySelectorAll('.nobsContainer').length
+totalVh = vh * totalSection;
+sectionHeight = totalVh / totalSection;
+}
+
 // Variables/Constantes
 let lastKnownOffset = window.scrollY;
 let vh = window.innerHeight;

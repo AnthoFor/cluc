@@ -56,9 +56,11 @@ header {
 .titleBorder {
     border: 1px solid gold;
     background-color: gold;
+    border-radius: 8px;
 }
 
 .sectionContent {
     background-color: #4A7767;
     height: 100%;
+    border-radius: 8px;
 }
