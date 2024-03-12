@@ -24,12 +24,7 @@ export function goesToSection() {
         // Pareil au moindre mouvement vers le bas, affiche la section précedente.
         } else {
             if (window.scrollY > 0 && window.scrollY <= totalVh / totalSection) {
-                console.log("en bas vers section 3");
-                // window.scroll({
-                //     top: sectionHeight,
-                //     behavior: 'auto',
-                //     duration: 10
-                // });
+                console.log("en bas vers section 2");
             } else if (window.scrollY > sectionHeight && window.scrollY < sectionHeight * 2) {
                 console.log("en bas vers section 3");
             } else if (window.scrollY > (sectionHeight * 2) && window.scrollY < sectionHeight * 3) {
@@ -56,9 +51,9 @@ function handleScroll(event) {
     event.preventDefault();
 }
 
-// constante
+// Variables/Constantes
 let lastKnownOffset = window.scrollY;
-const vh = window.innerHeight;
-const totalSection = document.querySelectorAll('.nobsContainer').length
-const totalVh = vh * totalSection;
-const sectionHeight = totalVh / totalSection;
+let vh = window.innerHeight;
+let totalSection = document.querySelectorAll('.nobsContainer').length
+let totalVh = vh * totalSection;
+let sectionHeight = totalVh / totalSection;

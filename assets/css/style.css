@@ -50,13 +50,15 @@ header {
 
 /* SECTIONS */
 .commonFrame {
-    height: 70vh;
+    height: 85vh;
 }
 
 .titleBorder {
     border: 1px solid gold;
+    background-color: gold;
 }
 
 .sectionContent {
     background-color: #4A7767;
+    height: 100%;
 }
