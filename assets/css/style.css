@@ -14,8 +14,13 @@ header {
     height: 100vh;
 }
 
-.logoTest {
-    max-height: 100%;
+.logo {
+    max-height: 40%;
+    
+}
+.logoText {
+    max-height: 30%;
+    max-width: 70%;
 }
 
 .nobsJustifyText {
