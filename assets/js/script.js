@@ -12,4 +12,10 @@ window.addEventListener('resize', function(e) {
     console.log('section height updated');
 })
 
+window.addEventListener('click', function(e){
+    if (e.target.id == 'needleNav') {
+        e.target.classList.toggle('needleToVertical')
+    }
+})
+
 AOS.init();

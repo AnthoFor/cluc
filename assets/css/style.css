@@ -7,11 +7,18 @@
 }
 
 header {
+    width: 100%;
     height: 10vh;
+    background-color: black;
 }
 
+#needleNav {
+    padding-top: 2vh;
+    max-height: 8vh;
+    transform: rotate(-90deg);
+}
 .nobsContainer {
-    height: 100vh;
+    height: 90vh;
 }
 
 .logo {
@@ -27,17 +34,17 @@ header {
     text-align: justify;
 }
 
-@keyframes dropHeight {
+@keyframes needleToVertical {
     from {
-        height: 100vh;
+        transform: rotate(-90deg);
     }
     to {
-        height: 0vh;
+        transform: rotate(0deg);
     }
 }
 
-.dropHeight {
-    animation: dropHeight 1s ease-in-out forwards;
+.needleToVertical {
+    animation: needleToVertical 1s ease-in-out forwards;
 }
 
 @keyframes getHeight {
