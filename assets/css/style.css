@@ -65,9 +65,11 @@ header {
     height: 85vh;
 }
 
-.titleBorder {
-    border: 1px solid gold;
-    background-color: gold;
+.SectionTitle {
+    background: #b1973b;
+background: linear-gradient(90deg,#b1973b 0%, #ccaa40 40%, #cdaf31 60%, #b1973b 100%);
+background: -webkit-linear-gradient(90deg,#b1973b 0%, #ccaa40 40%, #cdaf31 60%, #b1973b 100%);
+background: -moz-linear-gradient(90deg,#b1973b 0%, #ccaa40 40%, #cdaf31 60%, #b1973b 100%);
     border-radius: 8px;
 }
 
