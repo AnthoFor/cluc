@@ -9,14 +9,54 @@
 header {
     width: 100%;
     height: 10vh;
-    background-color: black;
-}
 
+}
+/* Aiguille */
 #needleNav {
     padding-top: 2vh;
     max-height: 8vh;
     transform: rotate(-90deg);
+    transition: transform 0.4s ease-in-out;
 }
+
+@keyframes needleToVertical {
+    from {
+        transform: rotate(-90deg);
+    }
+    to {
+        transform: rotate(0deg);
+    }
+}
+
+.needleToVertical {
+    animation: needleToVertical 0.4s ease-in-out forwards;
+}
+
+@keyframes needleToHorizontal {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(-90deg);
+    }
+}
+
+.needleToHorizontal {
+    animation: needleToHorizontal 0.4s ease-in-out forwards;
+}
+
+/* Fil (path) */
+#svgCalque {
+    max-height: 15vh;
+    display:none;
+}
+
+#path {
+    fill:none;
+    stroke:#000;
+    stroke-width: 3;
+}
+
 .nobsContainer {
     height: 90vh;
 }
@@ -34,31 +74,6 @@ header {
     text-align: justify;
 }
 
-@keyframes needleToVertical {
-    from {
-        transform: rotate(-90deg);
-    }
-    to {
-        transform: rotate(0deg);
-    }
-}
-
-.needleToVertical {
-    animation: needleToVertical 1s ease-in-out forwards;
-}
-
-@keyframes getHeight {
-    from {
-        height: 0vh;
-    }
-    to {
-        height: 100vh;
-    }
-}
-
-.getHeight {
-    animation: getHeight 1s ease-in-out forwards;
-}
 
 /* SECTIONS */
 .commonFrame {
