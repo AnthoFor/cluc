@@ -14,14 +14,14 @@ window.addEventListener('resize', function(e) {
 })
 
 window.addEventListener('click', function(e){
-    if (e.target.id == 'needleNav' || e.target.id == "svgCalque") {        
+    if (e.target.id == 'needleNav' || e.target.id == "svgCalque" || e.target.id == "needleCross") {        
         svgCalque.style.display = "initial";
         if (needleNav.classList.contains('needleToVertical')) {
             needleNav.classList.remove('needleToVertical')
             needleNav.classList.add('needleToHorizontal');
             monChemin.animate({
                 "stroke-dashoffset": longueurChemin
-            }, 400);
+            }, 500);
             gsap.to("#rect", {
                 motionPath: {
                     path: "#path",
@@ -34,20 +34,22 @@ window.addEventListener('click', function(e){
                     end: 0
                 },
                 transformOrigin: "80% 0%",
-                duration: 0.4,
+                duration: 0.5,
             });
             countMenu = true;
             setTimeout(function() {
                 svgCalque.style.display = "none";
-            }, 400);
-            
+            }, 500);
+            needleCross.classList.remove('opacityPlus');
+            needleCross.classList.add('opacityLess');
         } else {
+            // Pas compris le décalage, mais besoin de décaler à partir du 2e trigger
             let translateX = countMenu ? 2 : 0;
             needleNav.classList.add('needleToVertical')
             needleNav.classList.remove('needleToHorizontal');
             monChemin.animate({
                 "stroke-dashoffset": 1
-            }, 400);
+            }, 500);
             gsap.to("#rect", {
                 motionPath: {
                     path: "#path",
@@ -58,8 +60,10 @@ window.addEventListener('click', function(e){
                     curviness:2,
                 },
                 transformOrigin: "80% 0%",
-                duration: 0.4,
+                duration: 0.5,
             });
+            needleCross.classList.add('opacityPlus');
+            needleCross.classList.remove('opacityLess');
         }
     }
 })

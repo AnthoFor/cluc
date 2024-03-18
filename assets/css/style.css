@@ -14,9 +14,9 @@ header {
 /* Aiguille */
 #needleNav {
     padding-top: 2vh;
-    max-height: 8vh;
+    max-height: 6vh;
     transform: rotate(-90deg);
-    transition: transform 0.4s ease-in-out;
+    transition: transform 0.5s ease-in-out;
 }
 
 @keyframes needleToVertical {
@@ -24,17 +24,17 @@ header {
         transform: rotate(-90deg);
     }
     to {
-        transform: rotate(0deg);
+        transform: rotate(-45deg);
     }
 }
 
 .needleToVertical {
-    animation: needleToVertical 0.4s ease-in-out forwards;
+    animation: needleToVertical 0.5s ease-in-out forwards;
 }
 
 @keyframes needleToHorizontal {
     from {
-        transform: rotate(0deg);
+        transform: rotate(-45deg);
     }
     to {
         transform: rotate(-90deg);
@@ -42,9 +42,41 @@ header {
 }
 
 .needleToHorizontal {
-    animation: needleToHorizontal 0.4s ease-in-out forwards;
+    animation: needleToHorizontal 0.5s ease-in-out forwards;
 }
 
+#needleCross {
+    padding-top: 2vh;
+    max-height: 6vh;
+    transform: rotate(45deg) translate(200%, -20%);
+    opacity: 0;
+}
+
+@keyframes opacityPlus {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 100;
+    }
+}
+
+.opacityPlus {
+    animation: opacityPlus 0.5s ease-in-out forwards;
+}
+
+@keyframes opacityLess {
+    from {
+        opacity: 100;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+.opacityLess {
+    animation: opacityLess 0.5s ease-in-out forwards;
+}
 /* Fil (path) */
 #svgCalque {
     max-height: 15vh;
