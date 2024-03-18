@@ -1,4 +1,5 @@
 import { goesToSection, recalcOnResize } from "./functions.js";
+gsap.registerPlugin(MotionPathPlugin);
 
 // Ecouter les scroll (touch) vers le haut
 window.addEventListener('scroll', function(e) {
@@ -13,7 +14,7 @@ window.addEventListener('resize', function(e) {
 })
 
 window.addEventListener('click', function(e){
-    if (e.target.id == 'needleNav' || e.target.id == "svgCalque") {
+    if (e.target.id == 'needleNav' || e.target.id == "svgCalque") {        
         svgCalque.style.display = "initial";
         if (needleNav.classList.contains('needleToVertical')) {
             needleNav.classList.remove('needleToVertical')
@@ -21,12 +22,44 @@ window.addEventListener('click', function(e){
             monChemin.animate({
                 "stroke-dashoffset": longueurChemin
             }, 400);
+            gsap.to("#rect", {
+                motionPath: {
+                    path: "#path",
+                    align: "#path",
+                    autoRotate: true,
+                    alignOrigin: [0, 0],
+                    yoyo:true,
+                    curviness:2,
+                    start: 1,
+                    end: 0
+                },
+                transformOrigin: "80% 0%",
+                duration: 0.4,
+            });
+            countMenu = true;
+            setTimeout(function() {
+                svgCalque.style.display = "none";
+            }, 400);
+            
         } else {
+            let translateX = countMenu ? 2 : 0;
             needleNav.classList.add('needleToVertical')
             needleNav.classList.remove('needleToHorizontal');
             monChemin.animate({
                 "stroke-dashoffset": 1
             }, 400);
+            gsap.to("#rect", {
+                motionPath: {
+                    path: "#path",
+                    align: "#path",
+                    autoRotate: true,
+                    alignOrigin: [translateX, 0],
+                    yoyo:true,
+                    curviness:2,
+                },
+                transformOrigin: "80% 0%",
+                duration: 0.4,
+            });
         }
     }
 })
@@ -44,3 +77,5 @@ monChemin.attr({
     "stroke-dasharray": longueurChemin + " " + longueurChemin,
     "stroke-dashoffset": longueurChemin
 });
+
+let countMenu = false;
