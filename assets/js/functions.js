@@ -56,14 +56,15 @@ vh = window.innerHeight;
 totalSection = document.querySelectorAll('.nobsContainer').length
 totalVh = vh * totalSection;
 sectionHeight = totalVh / totalSection;
-TxtAtelierClucWidth = document.getElementById('txtAtelierCluc').offsetWidth;
-document.getElementById('txtRetouchesEtCréation').style.width = TxtAtelierClucWidth;
+TxtAtelierClucWidth = document.getElementById('txtAtelierCluc').clientWidth;
+console.log(TxtAtelierClucWidth);
+document.getElementById('txtRetouchesEtCreation').style.width = TxtAtelierClucWidth + 'px';
 }
 
 // Variables/Constantes
 let lastKnownOffset = window.scrollY;
-let TxtAtelierClucWidth = document.getElementById('txtAtelierCluc').offsetWidth;
-document.getElementById('txtRetouchesEtCréation').style.width = TxtAtelierClucWidth + 'px';
+let TxtAtelierClucWidth = document.getElementById('txtAtelierCluc').clientWidth;
+document.getElementById('txtRetouchesEtCreation').style.width = TxtAtelierClucWidth + 'px';
 let vh = window.innerHeight;
 let totalSection = document.querySelectorAll('.nobsContainer').length
 let totalVh = vh * totalSection;
