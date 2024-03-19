@@ -11,10 +11,11 @@ header {
     height: 10vh;
 
 }
+
 /* Aiguille */
 #needleNav {
     padding-top: 2vh;
-    max-height: 6vh;
+    max-height: 8vh;
     transform: rotate(-90deg);
     transition: transform 0.5s ease-in-out;
 }
@@ -47,8 +48,8 @@ header {
 
 #needleCross {
     padding-top: 2vh;
-    max-height: 6vh;
-    transform: rotate(45deg) translate(200%, -20%);
+    max-height: 8vh;
+    transform: rotate(45deg) translate(200%, -19%);
     opacity: 0;
 }
 
@@ -79,7 +80,9 @@ header {
 }
 /* Fil (path) */
 #svgCalque {
-    max-height: 15vh;
+    max-height: 20vh;
+    margin-top: 5vh;
+    right: -6vw;
     display:none;
 }
 
@@ -89,8 +92,12 @@ header {
     stroke-width: 3;
 }
 
+#sectionContainer {
+    margin-top: 12vh;
+}
 .nobsContainer {
-    height: 90vh;
+    /* padding-top: 12vh; */
+    height: 100vh;
 }
 
 .logo {
