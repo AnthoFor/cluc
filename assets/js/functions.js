@@ -56,14 +56,14 @@ vh = window.innerHeight;
 totalSection = document.querySelectorAll('.nobsContainer').length
 totalVh = vh * totalSection;
 sectionHeight = totalVh / totalSection;
-TxtAtelierClucWidth = document.getElementById('txtAtelierCluc').clientWidth;
+TxtAtelierClucWidth = document.getElementById('txtAtelierCluc').offsetWidth;
 console.log(TxtAtelierClucWidth);
 document.getElementById('txtRetouchesEtCreation').style.width = TxtAtelierClucWidth + 'px';
 }
 
 // Variables/Constantes
 let lastKnownOffset = window.scrollY;
-let TxtAtelierClucWidth = document.getElementById('txtAtelierCluc').clientWidth;
+let TxtAtelierClucWidth = document.getElementById('txtAtelierCluc').offsetWidth;
 document.getElementById('txtRetouchesEtCreation').style.width = TxtAtelierClucWidth + 'px';
 let vh = window.innerHeight;
 let totalSection = document.querySelectorAll('.nobsContainer').length
