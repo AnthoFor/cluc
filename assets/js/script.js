@@ -83,3 +83,7 @@ monChemin.attr({
 });
 
 let countMenu = false;
+
+document.addEventListener('DOMContentLoaded', function() {
+    recalcOnResize();
+});
