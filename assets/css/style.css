@@ -47,7 +47,7 @@ header {
     padding-top: 2vh;
     max-height: 8vh;
     transform: rotate(45deg);
-    /* opacity: 0; */
+    opacity: 0;
 }
 
 @keyframes opacityPlus {
@@ -80,7 +80,6 @@ header {
 #svgCalque {
     max-height: 20vh;
     margin-top: 5vh;
-    right: 0px;
     display:none;
 }
 
