@@ -17,7 +17,6 @@ header {
     padding-top: 2vh;
     max-height: 8vh;
     transform: rotate(-90deg);
-    transition: transform 0.5s ease-in-out;
 }
 
 @keyframes needleToVertical {
@@ -82,7 +81,7 @@ header {
 #svgCalque {
     max-height: 20vh;
     margin-top: 5vh;
-    right: -6vw;
+    right: 0px;
     display:none;
 }
 
@@ -112,7 +111,6 @@ header {
 .nobsJustifyText {
     text-align: justify;
 }
-
 
 /* SECTIONS */
 .commonFrame {
