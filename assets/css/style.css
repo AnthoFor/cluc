@@ -48,7 +48,7 @@ header {
 #needleCross {
     padding-top: 2vh;
     max-height: 8vh;
-    transform: rotate(45deg) translate(200%, -19%);
+    transform: rotate(45deg);
     /* opacity: 0; */
 }
 
