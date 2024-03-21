@@ -59,6 +59,13 @@ sectionHeight = totalVh / totalSection;
 TxtAtelierClucWidth = document.getElementById('txtAtelierCluc').offsetWidth;
 console.log(TxtAtelierClucWidth);
 document.getElementById('txtRetouchesEtCreation').style.width = TxtAtelierClucWidth + 'px';
+const rect = needleNav.getBoundingClientRect();
+const x = rect.right;
+const y = rect.top;
+const distanceRight = window.innerWidth - rect.right;
+const needleHeight = needleNav.offsetHeight /12.18;
+kikooDiv.style.right = (distanceRight / 10) + 'px';
+kikooDiv.style.top = (y + needleHeight) + 'px';
 }
 
 // Variables/Constantes

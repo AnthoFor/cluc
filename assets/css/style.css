@@ -18,14 +18,14 @@
 }
 
 .positionCustom {
-    top: 2vh;
-    right: 40px;
+    top: 30px;
+    right: 60px;
 }
 
 #kikooDiv {
     width: 10vw;
-    right: 0px;
-    top: 0px;
+    top: 50%;
+    right: 5px;
 }
 
 @keyframes needleToVertical {
@@ -89,10 +89,8 @@
 
 /* Fil (path) */
 #svgCalque {
-    min-height: 109px;
-    max-height: 20vh;
-    min-width: 90px;
-    /* margin-top: 5vh; */
+    max-height: 25vh;
+    min-width: 120px;
     opacity: 0;
 }
 
@@ -107,7 +105,6 @@
 }
 
 .nobsContainer {
-    /* padding-top: 12vh; */
     height: 100vh;
 }
 
