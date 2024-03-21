@@ -57,15 +57,12 @@ totalSection = document.querySelectorAll('.nobsContainer').length
 totalVh = vh * totalSection;
 sectionHeight = totalVh / totalSection;
 TxtAtelierClucWidth = document.getElementById('txtAtelierCluc').offsetWidth;
-console.log(TxtAtelierClucWidth);
 document.getElementById('txtRetouchesEtCreation').style.width = TxtAtelierClucWidth + 'px';
 const rect = needleNav.getBoundingClientRect();
-const x = rect.right;
-const y = rect.top;
 const distanceRight = window.innerWidth - rect.right;
-const needleHeight = needleNav.offsetHeight /12.18;
+// const distanceHeight = window.innerHeight - rect.top;
 kikooDiv.style.right = (distanceRight / 10) + 'px';
-kikooDiv.style.top = (y + needleHeight) + 'px';
+// kikooDiv.style.top = (distanceHeight) + 'px';
 }
 
 // Variables/Constantes
