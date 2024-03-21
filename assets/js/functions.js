@@ -60,9 +60,7 @@ TxtAtelierClucWidth = document.getElementById('txtAtelierCluc').offsetWidth;
 document.getElementById('txtRetouchesEtCreation').style.width = TxtAtelierClucWidth + 'px';
 const rect = needleNav.getBoundingClientRect();
 const distanceRight = window.innerWidth - rect.right;
-// const distanceHeight = window.innerHeight - rect.top;
 kikooDiv.style.right = (distanceRight / 10) + 'px';
-// kikooDiv.style.top = (distanceHeight) + 'px';
 }
 
 // Variables/Constantes

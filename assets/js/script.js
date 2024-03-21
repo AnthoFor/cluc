@@ -42,6 +42,8 @@ window.addEventListener('click', function(e){
             }, 500);
             needleCross.classList.remove('opacityPlus');
             needleCross.classList.add('opacityLess');
+            menuList.classList.remove('increaseHeight')
+            menuList.classList.add('decreaseHeight')
         } else {
             // Pas compris le décalage, mais besoin de décaler à partir du 2e trigger
             let translateX = countMenu ? 2 : 0;
@@ -65,6 +67,8 @@ window.addEventListener('click', function(e){
             svgCalque.style.opacity = "100"
             needleCross.classList.add('opacityPlus');
             needleCross.classList.remove('opacityLess');
+            menuList.classList.add('increaseHeight')
+            menuList.classList.remove('decreaseHeight')
         }
     }
 })
