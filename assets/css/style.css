@@ -16,13 +16,16 @@
     max-height: 8vh;
     transform: rotate(-90deg);
 }
+
 .positionCustom {
     top: 2vh;
     right: 2vw;
 }
+
 #kikooDiv {
     width: 10vw;
     right: 0px;
+    top: 0px;
 }
 
 @keyframes needleToVertical {
