@@ -80,7 +80,7 @@
 #svgCalque {
     max-height: 20vh;
     margin-top: 5vh;
-    display:none;
+    opacity: 0;
 }
 
 #path {

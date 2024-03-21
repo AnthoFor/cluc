@@ -38,7 +38,7 @@ window.addEventListener('click', function(e){
             });
             countMenu = true;
             setTimeout(function() {
-                svgCalque.style.display = "none";
+                svgCalque.style.opacity = "0";
             }, 500);
             needleCross.classList.remove('opacityPlus');
             needleCross.classList.add('opacityLess');
@@ -62,6 +62,7 @@ window.addEventListener('click', function(e){
                 transformOrigin: "80% 0%",
                 duration: 0.5,
             });
+            svgCalque.style.opacity = "100"
             needleCross.classList.add('opacityPlus');
             needleCross.classList.remove('opacityLess');
         }
