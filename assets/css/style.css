@@ -81,6 +81,8 @@
     max-height: 20vh;
     margin-top: 5vh;
     opacity: 0;
+    top: 0px;
+    right: 1vw;
 }
 
 #path {
