@@ -31,7 +31,7 @@
 
     <body>
         <header id="header" class="d-flex justify-content-end align-items-center fixed-top">
-            <div class="h-100 position-relative">
+            <div class="h-100 position-relative z-2">
                 <div class="d-flex justify-content-end position-absolute" id="kikooDiv">
                     <svg class="" id="svgCalque" data-name="Calque 1" xmlns="http://www.w3.org/2000/svg" viewBox="-60 -20 200 500">
                         <title>pathFil</title>
@@ -44,15 +44,15 @@
                 <img class="position-absolute positionCustom" id="needleNav" src="assets/img/needle.svg" alt="cluc needle">
                 <img class="position-absolute positionCustom" id="needleCross" src="assets/img/needle.svg" alt="cluc needle">
             </div>
+            <nav id="menuNav" class="position-relative z-0">
+                <ul id="menuList" class="position-absolute list-group">
+                    <li class="list-group-item border border-0">Prestation</li>
+                    <li class="list-group-item border border-0">Tarifs</li>
+                    <li class="list-group-item border border-0">Réalisations</li>
+                    <li class="list-group-item border border-0">Contact</li>
+                </ul>
+            </nav>
         </header>
-        <nav id="menuNav" class="position-relative">
-            <ul id="menuList" class="position-absolute list-group top-0">
-                <li class="list-group-item border border-0">Prestation</li>
-                <li class="list-group-item border border-0">Tarifs</li>
-                <li class="list-group-item border border-0">Réalisations</li>
-                <li class="list-group-item border border-0">Contact</li>
-            </ul>
-        </nav>
         <main id="sectionContainer">
             <section class="nobsContainer d-flex flex-column justify-content-around" id="section1">
                 <div class="col h-45 d-flex flex-column justify-content-center align-items-center">
