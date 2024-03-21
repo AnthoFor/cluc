@@ -12,14 +12,14 @@
 
 /* Aiguille */
 #needleNav {
-    padding-top: 2vh;
     max-height: 8vh;
+    min-height: 50px;
     transform: rotate(-90deg);
 }
 
 .positionCustom {
     top: 2vh;
-    right: 2vw;
+    right: 40px;
 }
 
 #kikooDiv {
@@ -55,8 +55,8 @@
 }
 
 #needleCross {
-    padding-top: 2vh;
     max-height: 8vh;
+    min-height: 50px;
     transform: rotate(45deg);
     opacity: 0;
 }
@@ -89,7 +89,9 @@
 
 /* Fil (path) */
 #svgCalque {
+    min-height: 109px;
     max-height: 20vh;
+    min-width: 90px;
     /* margin-top: 5vh; */
     opacity: 0;
 }
