@@ -17,7 +17,11 @@
     transform: rotate(-90deg);
 }
 .positionCustom {
-    top: 0px;
+    top: 2vh;
+    right: 2vw;
+}
+#kikooDiv {
+    width: 10vw;
     right: 0px;
 }
 
@@ -85,8 +89,6 @@
     max-height: 20vh;
     /* margin-top: 5vh; */
     opacity: 0;
-    top: 0px;
-    right: 5px;
 }
 
 #path {
