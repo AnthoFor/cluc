@@ -16,6 +16,10 @@
     max-height: 8vh;
     transform: rotate(-90deg);
 }
+.positionCustom {
+    top: 0px;
+    right: 0px;
+}
 
 @keyframes needleToVertical {
     from {
@@ -79,7 +83,7 @@
 /* Fil (path) */
 #svgCalque {
     max-height: 20vh;
-    margin-top: 5vh;
+    /* margin-top: 5vh; */
     opacity: 0;
     top: 0px;
     right: 5px;
