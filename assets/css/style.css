@@ -6,9 +6,9 @@
     font-size: 12px;
 }
 
-header {
+/* #header {
     height: 10vh;
-}
+} */
 
 /* Aiguille */
 #needleNav {
@@ -92,6 +92,7 @@ header {
 #sectionContainer {
     margin-top: 12vh;
 }
+
 .nobsContainer {
     /* padding-top: 12vh; */
     height: 100vh;
