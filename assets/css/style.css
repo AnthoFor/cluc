@@ -8,6 +8,8 @@
 
 #header {
     height: 10vh;
+    background-color: white;
+    z-index: 3;
 }
 
 /* Aiguille */
@@ -99,50 +101,19 @@
     stroke-width: 3;
 }
 
-/* #menuList::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-    background-color: white;
-    transform-origin: bottom;
-    transform: scaleY(1);
+#offCanvaMenu {
+    padding-top: 10vh;
 }
 
-#menuList.increaseHeight::before {
-    animation: increaseHeight 0.5s ease-in-out forwards;
+#menuOffCanvaBody {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
 }
 
-#menuList.decreaseHeight::before {
-    animation: decreaseHeight 0.5s ease-in-out forwards;
+#menuNav {
+    left: 34%;
 }
-
-#menuList {
-    right: 64px;
-    top: 45px;
-}
-
-@keyframes increaseHeight {
-    from {
-        transform: scaleY(1);
-    }
-    to {
-        transform: scaleY(0);
-    }
-}
-
-@keyframes decreaseHeight {
-    from {
-        transform: scaleY(0);
-    }
-    to {
-        transform: scaleY(1);
-    }
-} */
-
 #sectionContainer {
     margin-top: 10vh;
 }

@@ -30,7 +30,7 @@
 
     <body>
         <header id="header" class="d-flex justify-content-end align-items-center fixed-top">
-            <div class="h-100 position-relative z-3" data-bs-toggle="offcanvas" data-bs-target="#offCanvaMenu">
+            <div class="h-100 position-relative z-3">
                 <div class="d-flex justify-content-end position-absolute" id="kikooDiv" data-bs-toggle="offcanvas" data-bs-target="#offCanvaMenu">
                     <svg class="" id="svgCalque" data-name="Calque 1" xmlns="http://www.w3.org/2000/svg" viewBox="-60 -20 200 500" data-bs-toggle="offcanvas" data-bs-target="#offCanvaMenu">
                         <title>pathFil</title>
@@ -79,9 +79,8 @@
         </main>
         <div class="offcanvas offcanvas-top z-2 h-100" tabindex="-1" id="offCanvaMenu" aria-labelledby="offCanvaMenuLabel" data-bs-backdrop="false">
             <div class="offcanvas-header">
-                <h5 class="offcanvas-title" id="offCanvaMenuLabel">Offcanvas top</h5>
             </div>
-            <div class="offcanvas-body">
+            <div class="offcanvas-body" id="menuOffCanvaBody">
                 <nav id="menuNav" class="position-relative">
                     <ul id="menuList" class="position-absolute list-group">
                         <li class="list-group-item border border-0">Prestation</li>

@@ -8,7 +8,6 @@ function isScrollUp(currentOffset, lastKnownOffset) {
 export function goesToSection() {
     if (window.scrollY == 0) {
         console.log("L'utilisateur est tout en haut du site.");
-        // Remet le logo d'origine, supprime la navbar
     } else {
         // le logo se transforme dans la nav bar
         // ---
@@ -37,20 +36,6 @@ export function goesToSection() {
         }
     }
     lastKnownOffset = window.scrollY;
-}
-
-export function toggleScrollListener(enableScroll) {
-    if (enableScroll) {
-        // Activer l'écoute du défilement
-        window.addEventListener('scroll', handleScroll);
-    } else {
-        // Désactiver l'écoute du défilement
-        window.removeEventListener('scroll', handleScroll);
-    }
-}
-
-function handleScroll(event) {
-    event.preventDefault();
 }
 
 export function recalcOnResize() {
@@ -120,9 +105,6 @@ export function menuAnimation(collapse) {
     }
 }
 
-
-
-
 // Variables/Constantes
 let lastKnownOffset = window.scrollY;
 let TxtAtelierClucWidth = document.getElementById('txtAtelierCluc').offsetWidth;
@@ -132,11 +114,11 @@ let totalSection = document.querySelectorAll('.nobsContainer').length
 let totalVh = vh * totalSection;
 let sectionHeight = totalVh / totalSection;
 let countMenu = false;
-var svg = Snap("#svgCalque");
-var monChemin = svg.select("#path");
+let svg = Snap("#svgCalque");
+let monChemin = svg.select("#path");
 
 // Longueur totale du chemin du "path"
-var longueurChemin = Snap.path.getTotalLength(monChemin);
+let longueurChemin = Snap.path.getTotalLength(monChemin);
 
 // Définir la longueur du chemin à 0 au début de l'animation
 monChemin.attr({
