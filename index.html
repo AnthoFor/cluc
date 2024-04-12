@@ -4,7 +4,6 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!-- <link rel="stylesheet" href="assets/css/bootstrap.min.css"> -->
         <link rel="stylesheet" href="assets/css/aos.css" />
         <link rel="stylesheet" href="assets/css/custom.css">
         <link rel="stylesheet" href="assets/css/style.css">
@@ -12,7 +11,7 @@
         <title>Atelier Cluc</title>
         <meta name="description" content="Bienvenue à notre atelier de couture spécialisé dans les retouches et les réparations. Nous offrons des services de haute qualité pour ajuster et réparer vos vêtements, qu'il s'agisse de couture sur mesure, de modification de taille, de réparation de fermetures éclair ou de réfection de coutures. Contactez-nous dès aujourd'hui pour des services de couture professionnels et fiables.">
         <meta name="keywords" content="atelier de couture, retouches, réparations, ajustement de vêtements, couture sur mesure, modification de taille, réparation de fermetures éclair, réfection de coutures">
-        <!-- <meta name="author" content="Votre nom ou le nom de votre entreprise"> -->
+        <meta name="author" content="Atlier Cluc, website by Anthony.">
         <!-- <link rel="canonical" href="URL canonique de votre page"> -->
 
         <!-- Balises Open Graph pour les réseaux sociaux -->
@@ -31,9 +30,9 @@
 
     <body>
         <header id="header" class="d-flex justify-content-end align-items-center fixed-top">
-            <div class="h-100 position-relative z-2">
-                <div class="d-flex justify-content-end position-absolute" id="kikooDiv">
-                    <svg class="" id="svgCalque" data-name="Calque 1" xmlns="http://www.w3.org/2000/svg" viewBox="-60 -20 200 500">
+            <div class="h-100 position-relative z-3" data-bs-toggle="offcanvas" data-bs-target="#offCanvaMenu">
+                <div class="d-flex justify-content-end position-absolute" id="kikooDiv" data-bs-toggle="offcanvas" data-bs-target="#offCanvaMenu">
+                    <svg class="" id="svgCalque" data-name="Calque 1" xmlns="http://www.w3.org/2000/svg" viewBox="-60 -20 200 500" data-bs-toggle="offcanvas" data-bs-target="#offCanvaMenu">
                         <title>pathFil</title>
                         <path id="path" d="M220.5,68c43.44,42.33,60.74,91.64,44,122.5-10.16,18.73-37.17,38.61-56,31-10.62-4.29-19.14-17.52-17-29,2.49-13.37,19.27-23.48,33-23,34,1.19,73.82,68.13,60,117-8,28.13-28.27,31.1-28,55,.34,30.37,33.31,40,37,72,2.4,20.8-8.73,40.95-25,59" transform="translate(-190.67 -67.64)"/>
                         <g id="rect">
@@ -41,17 +40,9 @@
                         </g>
                     </svg>
                 </div>
-                <img class="position-absolute positionCustom" id="needleNav" src="assets/img/needle.svg" alt="cluc needle">
-                <img class="position-absolute positionCustom" id="needleCross" src="assets/img/needle.svg" alt="cluc needle">
+                <img class="position-absolute positionCustom" id="needleNav" data-bs-toggle="offcanvas" data-bs-target="#offCanvaMenu" aria-controls="offCanvaMenu" src="assets/img/needle.svg" alt="cluc needle">
+                <img class="position-absolute positionCustom" id="needleCross" data-bs-toggle="offcanvas" data-bs-target="#offCanvaMenu" aria-label="Close" src="assets/img/needle.svg" alt="cluc needle">
             </div>
-            <nav id="menuNav" class="position-relative z-0">
-                <ul id="menuList" class="position-absolute list-group">
-                    <li class="list-group-item border border-0">Prestation</li>
-                    <li class="list-group-item border border-0">Tarifs</li>
-                    <li class="list-group-item border border-0">Réalisations</li>
-                    <li class="list-group-item border border-0">Contact</li>
-                </ul>
-            </nav>
         </header>
         <main id="sectionContainer">
             <section class="nobsContainer d-flex flex-column justify-content-around" id="section1">
@@ -86,6 +77,21 @@
                 <p>section 5</p>
             </section>
         </main>
+        <div class="offcanvas offcanvas-top z-2 h-100" tabindex="-1" id="offCanvaMenu" aria-labelledby="offCanvaMenuLabel" data-bs-backdrop="false">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offCanvaMenuLabel">Offcanvas top</h5>
+            </div>
+            <div class="offcanvas-body">
+                <nav id="menuNav" class="position-relative">
+                    <ul id="menuList" class="position-absolute list-group">
+                        <li class="list-group-item border border-0">Prestation</li>
+                        <li class="list-group-item border border-0">Tarifs</li>
+                        <li class="list-group-item border border-0">Réalisations</li>
+                        <li class="list-group-item border border-0">Contact</li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
         <script src="assets/js/aos.js"></script>
         <script src="assets/js/gsap/gsap.min.js"></script>
         <script src="assets/js/gsap/MotionPathPlugin.min.js"></script>

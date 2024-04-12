@@ -99,7 +99,7 @@
     stroke-width: 3;
 }
 
-#menuList::before {
+/* #menuList::before {
     content: '';
     position: absolute;
     top: 0;
@@ -127,21 +127,21 @@
 
 @keyframes increaseHeight {
     from {
-        transform: scaleY(1); /* Début de l'animation: invisible */
+        transform: scaleY(1);
     }
     to {
-        transform: scaleY(0); /* Fin de l'animation: visible */
+        transform: scaleY(0);
     }
 }
 
 @keyframes decreaseHeight {
     from {
-        transform: scaleY(0); /* Début de l'animation: invisible */
+        transform: scaleY(0);
     }
     to {
-        transform: scaleY(1); /* Fin de l'animation: visible */
+        transform: scaleY(1);
     }
-}
+} */
 
 #sectionContainer {
     margin-top: 10vh;
