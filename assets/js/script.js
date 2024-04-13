@@ -14,19 +14,26 @@ window.addEventListener('resize', function(e) {
 
 window.addEventListener('click', function(e){
     if (e.target.id == 'needleNav' || e.target.id == "svgCalque" || e.target.id == "needleCross") {        
-        if (collapse) {
-            collapse = false;
-        } else {
-            collapse = true;
-        }
+        collapse = collapse ? false : true;
         menuAnimation(collapse)
     }
 })
 
-AOS.init();
+document.addEventListener('keydown', function(event) { 
+    if (event.key === 'Escape') {
+        if (needleNav.classList.contains('needleToVertical')) {
+            menuAnimation(true)
+            collapse = collapse ? false : true;
+        }
+    }
+})
+
 
 document.addEventListener('DOMContentLoaded', function() {
     recalcOnResize();
 });
 
+AOS.init();
+
+// Var
 let collapse = true;

@@ -9,8 +9,6 @@ export function goesToSection() {
     if (window.scrollY == 0) {
         console.log("L'utilisateur est tout en haut du site.");
     } else {
-        // le logo se transforme dans la nav bar
-        // ---
         // Au moindre mouvement vers le haut, alors affiche la section suivante.
         if (isScrollUp(window.scrollY, lastKnownOffset)) {
             if (window.scrollY < (sectionHeight * 4) && window.scrollY > (sectionHeight * 3)) {
@@ -105,7 +103,7 @@ export function menuAnimation(collapse) {
     }
 }
 
-// Variables/Constantes
+// Var
 let lastKnownOffset = window.scrollY;
 let TxtAtelierClucWidth = document.getElementById('txtAtelierCluc').offsetWidth;
 document.getElementById('txtRetouchesEtCreation').style.width = TxtAtelierClucWidth + 'px';
@@ -116,12 +114,9 @@ let sectionHeight = totalVh / totalSection;
 let countMenu = false;
 let svg = Snap("#svgCalque");
 let monChemin = svg.select("#path");
+let longueurChemin = Snap.path.getTotalLength(monChemin); // Longueur totale du chemin du "path"
 
-// Longueur totale du chemin du "path"
-let longueurChemin = Snap.path.getTotalLength(monChemin);
-
-// Définir la longueur du chemin à 0 au début de l'animation
 monChemin.attr({
     "stroke-dasharray": longueurChemin + " " + longueurChemin,
     "stroke-dashoffset": longueurChemin
-});
+}); // Définir la longueur du chemin à 0 au début de l'animation
