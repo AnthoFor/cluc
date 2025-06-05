@@ -108,12 +108,12 @@
 #menuOffCanvaBody {
     display: flex;
     flex-direction: column;
-    align-content: center;
+    overflow: hidden;
 }
 
 #menuNav {
-    left: 34%;
 }
+
 #sectionContainer {
     margin-top: 10vh;
 }
@@ -142,9 +142,9 @@
 
 .SectionTitle {
     background: #b1973b;
-background: linear-gradient(90deg,#b1973b 0%, #ccaa40 40%, #cdaf31 60%, #b1973b 100%);
-background: -webkit-linear-gradient(90deg,#b1973b 0%, #ccaa40 40%, #cdaf31 60%, #b1973b 100%);
-background: -moz-linear-gradient(90deg,#b1973b 0%, #ccaa40 40%, #cdaf31 60%, #b1973b 100%);
+    background: linear-gradient(90deg,#b1973b 0%, #ccaa40 40%, #cdaf31 60%, #b1973b 100%);
+    background: -webkit-linear-gradient(90deg,#b1973b 0%, #ccaa40 40%, #cdaf31 60%, #b1973b 100%);
+    background: -moz-linear-gradient(90deg,#b1973b 0%, #ccaa40 40%, #cdaf31 60%, #b1973b 100%);
     border-radius: 8px;
 }
 
