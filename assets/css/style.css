@@ -12,6 +12,13 @@
     z-index: 3;
 }
 
+#miniLogoLeft {
+    top: 1vh;
+    height: 8vh;
+    left: 12px;
+    opacity: 0;
+}
+
 /* Aiguille */
 #needleNav {
     max-height: 8vh;
@@ -28,6 +35,10 @@
     width: 10vw;
     top: 40px;
 }
+
+/* .topSpacer {
+    height: 10vh;
+} */
 
 @keyframes needleToVertical {
     from {
@@ -115,11 +126,12 @@
 }
 
 #sectionContainer {
-    margin-top: 10vh;
+    /* padding-top: 10vh; */
 }
 
 .nobsContainer {
-    height: 90vh;
+    height: 100vh;
+    padding-top: 15vh;
 }
 
 .logo {
@@ -137,7 +149,7 @@
 
 /* SECTIONS */
 .commonFrame {
-    height: 85vh;
+    height: 100%;
 }
 
 .SectionTitle {

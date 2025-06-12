@@ -2,38 +2,36 @@ gsap.registerPlugin(MotionPathPlugin);
 
 // Functions
 function isScrollUp(currentOffset, lastKnownOffset) {
+    console.log(currentOffset < lastKnownOffset)
     return currentOffset < lastKnownOffset;
 }
 
-export function goesToSection() {
-    if (window.scrollY == 0) {
-        console.log("L'utilisateur est tout en haut du site.");
+export function goesToSection(deltaY, isScrolling) {
+    let totalSections = 5;
+    const currentSection = Math.round(window.scrollY / sectionHeight);
+    let targetSection = currentSection;
+
+    if (deltaY > 0) {
+        // swipe vers le haut → aller vers section suivante
+        targetSection = Math.min(currentSection + 1, totalSections - 1);
     } else {
-        // Au moindre mouvement vers le haut, alors affiche la section suivante.
-        if (isScrollUp(window.scrollY, lastKnownOffset)) {
-            if (window.scrollY < (sectionHeight * 4) && window.scrollY > (sectionHeight * 3)) {
-                console.log("en haut vers section 4");
-            } else if (window.scrollY < (sectionHeight * 3) && window.scrollY > (sectionHeight * 2)) {
-                console.log("en haut vers section 3")
-            } else if (window.scrollY < (sectionHeight * 2) && window.scrollY > (sectionHeight)) {
-                console.log("en haut vers section 2")
-            } else if (window.scrollY < sectionHeight) {
-                console.log("en haut vers section 1")
-            }
-        // Pareil au moindre mouvement vers le bas, affiche la section précedente.
-        } else {
-            if (window.scrollY > 0 && window.scrollY <= totalVh / totalSection) {
-                console.log("en bas vers section 2");
-            } else if (window.scrollY > sectionHeight && window.scrollY < sectionHeight * 2) {
-                console.log("en bas vers section 3");
-            } else if (window.scrollY > (sectionHeight * 2) && window.scrollY < sectionHeight * 3) {
-                console.log("en bas vers section 4");
-            } else if (window.scrollY > (sectionHeight * 3) && window.scrollY < sectionHeight * 4) {
-                console.log("en bas vers section 5");
-            }
-        }
+        // swipe vers le bas → aller vers section précédente
+        targetSection = Math.max(currentSection - 1, 0);
     }
-    lastKnownOffset = window.scrollY;
+
+    const targetId = `section${targetSection + 1}`;
+    const targetEl = document.getElementById(targetId);
+
+    if (targetId) {
+        if ((targetSection + 1) == 1) {
+            miniLogoLeft.classList.remove('opacityPlus');
+            miniLogoLeft.classList.add('opacityLess');
+        } else {
+            miniLogoLeft.classList.remove('opacityLess');
+            miniLogoLeft.classList.add('opacityPlus')
+        }
+        targetEl.scrollIntoView({ behavior: 'smooth' });
+    }
 }
 
 export function recalcOnResize() {

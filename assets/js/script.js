@@ -1,9 +1,20 @@
 import { goesToSection, recalcOnResize, menuAnimation } from "./functions.js";
 
-// Ecouter les scroll (touch) vers le haut
-window.addEventListener('scroll', function(e) {
-    goesToSection();
+// Ecouter les Touch
+document.addEventListener('touchstart', (e) => {
+    startY = e.touches[0].clientY;
 });
+
+document.addEventListener('touchend', (e) => {
+    const endY = e.changedTouches[0].clientY;
+    const deltaY = startY - endY;
+    if (Math.abs(deltaY) < 40) return; // Ignore petits mouvements
+    isScrolling = true;
+    goesToSection(deltaY)
+    setTimeout(() => {
+        isScrolling = false;
+    }, 800); // Temps d'attente pour éviter déclenchement multiple
+})
 
 window.addEventListener('resize', function(e) {
     AOS.refresh();
@@ -37,3 +48,5 @@ AOS.init();
 
 // Var
 let collapse = true;
+let startY = 0;
+let isScrolling = false;
