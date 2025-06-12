@@ -45,6 +45,31 @@ window.addEventListener('click', function(e){
         menuAnimation(true)
         document.querySelector('#section1').scrollIntoView({ behavior: 'smooth' })
     }
+    if (e.target.id == 'prestation') {
+        collapse = collapse ? false : true;
+        menuAnimation(true)
+        document.querySelector('#section2').scrollIntoView({ behavior: 'smooth' })
+    }
+    if (e.target.id == 'tarif') {
+        collapse = collapse ? false : true;
+        menuAnimation(true)
+        document.querySelector('#section3').scrollIntoView({ behavior: 'smooth' })
+    }
+    if (e.target.id == 'realisation') {
+        collapse = collapse ? false : true;
+        menuAnimation(true)
+        document.querySelector('#section4').scrollIntoView({ behavior: 'smooth' })
+    }
+    if (e.target.id == 'horaire') {
+        collapse = collapse ? false : true;
+        menuAnimation(true)
+        document.querySelector('#section5').scrollIntoView({ behavior: 'smooth' })
+    }
+    if (e.target.id == 'acces') {
+        collapse = collapse ? false : true;
+        menuAnimation(true)
+        document.querySelector('#section6').scrollIntoView({ behavior: 'smooth' })
+    }
 })
 
 document.addEventListener('keydown', function(event) { 
