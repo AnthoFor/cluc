@@ -180,6 +180,7 @@
 /* SECTIONS */
 .commonFrame {
     height: 100%;
+    width: 90%;
 }
 
 .sectionContent {
