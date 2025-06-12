@@ -216,7 +216,7 @@
   }
   
   .prestations-list li::before {
-    content: url("/assets/img/machineACoudre.svg");
+    content: url("/cluc/assets/img/machineACoudre.svg");
     position: absolute;
     left: 0;
     top: 0;
