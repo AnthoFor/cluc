@@ -1,19 +1,13 @@
 gsap.registerPlugin(MotionPathPlugin);
 
-// Functions
-function isScrollUp(currentOffset, lastKnownOffset) {
-    console.log(currentOffset < lastKnownOffset)
-    return currentOffset < lastKnownOffset;
-}
-
 export function goesToSection(deltaY, isScrolling) {
-    let totalSections = 5;
+    // let totalSections = 5;
     const currentSection = Math.round(window.scrollY / sectionHeight);
     let targetSection = currentSection;
 
     if (deltaY > 0) {
         // swipe vers le haut → aller vers section suivante
-        targetSection = Math.min(currentSection + 1, totalSections - 1);
+        targetSection = Math.min(currentSection + 1, totalSection - 1);
     } else {
         // swipe vers le bas → aller vers section précédente
         targetSection = Math.max(currentSection - 1, 0);
@@ -35,8 +29,9 @@ export function goesToSection(deltaY, isScrolling) {
 }
 
 export function recalcOnResize() {
-vh = window.innerHeight;
+vh = vh = window.visualViewport ? window.visualViewport.height : window.innerHeight;
 totalSection = document.querySelectorAll('.nobsContainer').length
+console.log(totalSection);
 totalVh = vh * totalSection;
 sectionHeight = totalVh / totalSection;
 TxtAtelierClucWidth = document.getElementById('txtAtelierCluc').offsetWidth;
@@ -49,7 +44,8 @@ kikooDiv.style.right = (distanceRight / 10) + 'px';
 export function menuAnimation(collapse) {
     console.log(collapse);
     if (collapse) {
-        needleNav.classList.remove('needleToVertical')
+        console.log('remonte');
+        needleNav.classList.remove('needleToVertical');
         needleNav.classList.add('needleToHorizontal');
         monChemin.animate({
             "stroke-dashoffset": longueurChemin
@@ -75,6 +71,7 @@ export function menuAnimation(collapse) {
         needleCross.classList.remove('opacityPlus');
         needleCross.classList.add('opacityLess');
     } else {
+        console.log('descend');
         // Pas compris le décalage, mais besoin de décaler à partir du 2e trigger
         let translateX = countMenu ? 2 : 0;
         svgCalque.style.display = "initial";
@@ -102,10 +99,9 @@ export function menuAnimation(collapse) {
 }
 
 // Var
-let lastKnownOffset = window.scrollY;
 let TxtAtelierClucWidth = document.getElementById('txtAtelierCluc').offsetWidth;
 document.getElementById('txtRetouchesEtCreation').style.width = TxtAtelierClucWidth + 'px';
-let vh = window.innerHeight;
+let vh = window.visualViewport ? window.visualViewport.height : window.innerHeight;
 let totalSection = document.querySelectorAll('.nobsContainer').length
 let totalVh = vh * totalSection;
 let sectionHeight = totalVh / totalSection;
