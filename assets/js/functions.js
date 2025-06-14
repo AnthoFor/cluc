@@ -17,13 +17,7 @@ export function goesToSection(deltaY, isScrolling) {
     const targetEl = document.getElementById(targetId);
 
     if (targetId) {
-        if ((targetSection + 1) == 1) {
-            miniLogoLeft.classList.remove('opacityPlus');
-            miniLogoLeft.classList.add('opacityLess');
-        } else {
-            miniLogoLeft.classList.remove('opacityLess');
-            miniLogoLeft.classList.add('opacityPlus')
-        }
+        miniLogoShow(targetSection+1);
         targetEl.scrollIntoView({ behavior: 'smooth' });
     }
 }
@@ -31,7 +25,6 @@ export function goesToSection(deltaY, isScrolling) {
 export function recalcOnResize() {
 vh = vh = window.visualViewport ? window.visualViewport.height : window.innerHeight;
 totalSection = document.querySelectorAll('.nobsContainer').length
-console.log(totalSection);
 totalVh = vh * totalSection;
 sectionHeight = totalVh / totalSection;
 TxtAtelierClucWidth = document.getElementById('txtAtelierCluc').offsetWidth;
@@ -42,9 +35,7 @@ kikooDiv.style.right = (distanceRight / 10) + 'px';
 }
 
 export function menuAnimation(collapse) {
-    console.log(collapse);
     if (collapse) {
-        console.log('remonte');
         needleNav.classList.remove('needleToVertical');
         needleNav.classList.add('needleToHorizontal');
         monChemin.animate({
@@ -71,7 +62,6 @@ export function menuAnimation(collapse) {
         needleCross.classList.remove('opacityPlus');
         needleCross.classList.add('opacityLess');
     } else {
-        console.log('descend');
         // Pas compris le décalage, mais besoin de décaler à partir du 2e trigger
         let translateX = countMenu ? 2 : 0;
         svgCalque.style.display = "initial";
@@ -98,6 +88,32 @@ export function menuAnimation(collapse) {
     }
 }
 
+export function miniLogoShow(targetSection) {
+    if (targetSection == 1) {
+        // Enleve le logo
+        logoAccueil.removeAttribute('data-aos');
+        logoAccueil.classList.remove('mini-top-left');
+        logoAccueil.classList.remove('aos-init');
+        logoAccueil.classList.remove('aos-animate');
+        logoAccueil.style.left = '50%';
+        logoAccueil.style.top = '33%';
+        logoAccueil.style.transform= 'translate(-50%, -50%)';
+        // miniLogoLeft.classList.remove('opacityPlus');
+        // miniLogoLeft.classList.add('opacityLess');
+    } else {
+        // affiche le logo
+        logoAccueil.classList.remove('mini-top-left');
+        logoAccueil.classList.remove('aos-init');
+        logoAccueil.classList.remove('aos-animate');
+        logoAccueil.classList.add('mini-top-left');
+        logoAccueil.style.left = '10px';
+        logoAccueil.style.top = '10px';
+        logoAccueil.style.transform= 'translate(0, 0)';
+        // miniLogoLeft.classList.remove('opacityLess');
+        // miniLogoLeft.classList.add('opacityPlus')
+    }
+}
+
 // Var
 let TxtAtelierClucWidth = document.getElementById('txtAtelierCluc').offsetWidth;
 document.getElementById('txtRetouchesEtCreation').style.width = TxtAtelierClucWidth + 'px';
@@ -110,7 +126,8 @@ let svg = Snap("#svgCalque");
 let monChemin = svg.select("#path");
 let longueurChemin = Snap.path.getTotalLength(monChemin); // Longueur totale du chemin du "path"
 
+// Définir la longueur du chemin à 0 au début de l'animation
 monChemin.attr({
     "stroke-dasharray": longueurChemin + " " + longueurChemin,
     "stroke-dashoffset": longueurChemin
-}); // Définir la longueur du chemin à 0 au début de l'animation
+}); 

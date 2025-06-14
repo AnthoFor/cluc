@@ -1,9 +1,8 @@
-import { goesToSection, recalcOnResize, menuAnimation } from "./functions.js";
+import { goesToSection, recalcOnResize, menuAnimation, miniLogoShow } from "./functions.js";
 //Ecoute du scroll
 document.addEventListener('scroll', () => {
     if (window.scrollY == 0) {
-        miniLogoLeft.classList.remove('opacityPlus');
-        miniLogoLeft.classList.add('opacityLess');
+        miniLogoShow(1)
     }
 });
 
@@ -18,6 +17,7 @@ document.addEventListener('touchend', (e) => {
     // Ignore petits mouvements
     if (Math.abs(deltaY) < 25 || isScrolling) return; 
     isScrolling = true;
+    recalcOnResize();
     goesToSection(deltaY)
     // Temps d'attente pour éviter déclenchement multiple
     setTimeout(() => {
@@ -37,38 +37,45 @@ window.addEventListener('click', function(e){
         collapse = collapse ? false : true;
         menuAnimation(collapse)
     }
-    if (e.target.id == 'miniLogoLeft' || e.target.id == 'accueil') {
+    if (e.target.id == 'logoAccueil' || e.target.id == 'accueil') {
         document.querySelector('#section1').scrollIntoView({ behavior: 'smooth' })
+        miniLogoShow(0)
     }
     if (e.target.id == 'accueil') {
         collapse = collapse ? false : true;
         menuAnimation(true)
         document.querySelector('#section1').scrollIntoView({ behavior: 'smooth' })
+        miniLogoShow(2)
     }
     if (e.target.id == 'prestation') {
         collapse = collapse ? false : true;
         menuAnimation(true)
         document.querySelector('#section2').scrollIntoView({ behavior: 'smooth' })
+        miniLogoShow(2)
     }
     if (e.target.id == 'tarif') {
         collapse = collapse ? false : true;
         menuAnimation(true)
         document.querySelector('#section3').scrollIntoView({ behavior: 'smooth' })
+        miniLogoShow(2)
     }
     if (e.target.id == 'realisation') {
         collapse = collapse ? false : true;
         menuAnimation(true)
         document.querySelector('#section4').scrollIntoView({ behavior: 'smooth' })
+        miniLogoShow(2)
     }
     if (e.target.id == 'horaire') {
         collapse = collapse ? false : true;
         menuAnimation(true)
         document.querySelector('#section5').scrollIntoView({ behavior: 'smooth' })
+        miniLogoShow(2)
     }
     if (e.target.id == 'acces') {
         collapse = collapse ? false : true;
         menuAnimation(true)
         document.querySelector('#section6').scrollIntoView({ behavior: 'smooth' })
+        miniLogoShow(2)
     }
 })
 
