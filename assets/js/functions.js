@@ -91,9 +91,11 @@ export function menuAnimation(collapse) {
 export function miniLogoShow(targetSection) {
     if (targetSection == 1) {
         // Remet le logo en gros au milieu
+        header.style.background = "transparent";
         logoAccueil.classList.remove('mini-top-left');
     } else {
         // affiche le logo en haut a gauche en petit
+        header.style.background = "white";
         logoAccueil.classList.add('mini-top-left');
     }
 }
