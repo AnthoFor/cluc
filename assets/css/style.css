@@ -175,9 +175,9 @@
 .logo.mini-top-left {
     z-index: 3 !important;
     max-height: 8vh !important;
-    left: 2%;
-    top: 1vh;
-    transform: translate(0, 0);
+    left: 10%;
+    top: 5vh;
+    /* transform: translate(0, 0); */
 }
 
 .logoText {

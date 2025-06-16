@@ -1,7 +1,7 @@
 import { goesToSection, recalcOnResize, menuAnimation, miniLogoShow } from "./functions.js";
 //Ecoute du scroll
 document.addEventListener('scroll', (e) => {
-    if (window.scrollY == 0) {
+    if (window.scrollY <= 0) {
         miniLogoShow(1)
     } else {
         miniLogoShow(2)
