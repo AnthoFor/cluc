@@ -173,11 +173,10 @@
 }
 
 .logo.mini-top-left {
-    z-index: 3 !important;
+    z-index: 4 !important;
     max-height: 8vh !important;
     left: 5%;
     top: 5vh;
-    /* transform: translate(0, 0); */
 }
 
 .logoText {
