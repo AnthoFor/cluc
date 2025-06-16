@@ -95,7 +95,7 @@ export function miniLogoShow(targetSection) {
         logoAccueil.classList.remove('mini-top-left');
     } else {
         // affiche le logo en haut a gauche en petit
-        header.style.background = "white";
+        header.style.background = "rgba(255, 255, 255, 1)";
         logoAccueil.classList.add('mini-top-left');
     }
 }
