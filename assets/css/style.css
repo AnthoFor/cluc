@@ -175,7 +175,7 @@
 .logo.mini-top-left {
     z-index: 3 !important;
     max-height: 8vh !important;
-    left: 10%;
+    left: 5%;
     top: 5vh;
     /* transform: translate(0, 0); */
 }
