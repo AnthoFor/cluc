@@ -90,10 +90,10 @@ export function menuAnimation(collapse) {
 
 export function miniLogoShow(targetSection) {
     if (targetSection == 1) {
-        // Enleve le logo
+        // Remet le logo en gros au milieu
         logoAccueil.classList.remove('mini-top-left');
     } else {
-        // affiche le logo
+        // affiche le logo en haut a gauche en petit
         logoAccueil.classList.add('mini-top-left');
     }
 }
