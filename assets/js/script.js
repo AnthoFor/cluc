@@ -1,8 +1,10 @@
 import { goesToSection, recalcOnResize, menuAnimation, miniLogoShow } from "./functions.js";
 //Ecoute du scroll
-document.addEventListener('scroll', () => {
+document.addEventListener('scroll', (e) => {
     if (window.scrollY == 0) {
         miniLogoShow(1)
+    } else {
+        miniLogoShow(2)
     }
 });
 
@@ -39,7 +41,7 @@ window.addEventListener('click', function(e){
     }
     if (e.target.id == 'logoAccueil' || e.target.id == 'accueil') {
         document.querySelector('#section1').scrollIntoView({ behavior: 'smooth' })
-        miniLogoShow(0)
+        miniLogoShow(1)
     }
     if (e.target.id == 'accueil') {
         collapse = collapse ? false : true;
@@ -94,6 +96,15 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 AOS.init();
+
+// Pour revenir à l'accueuil en cas de refresh
+document.querySelector('#section1').scrollIntoView({ behavior: 'smooth' })
+// Permet de faire la même chose qu'AOS sans le decalage
+logoAccueil.classList.add('growing');
+    setTimeout(() => {
+        logoAccueil.style.maxHeight = "33%";
+        logoAccueil.classList.remove('growing');
+    }, 600);
 
 // Var
 let collapse = true;

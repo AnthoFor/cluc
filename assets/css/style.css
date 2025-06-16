@@ -27,6 +27,7 @@
 #kikooDiv {
     width: 10vw;
     top: 40px;
+    z-index: 22;
 }
 
 @keyframes needleToVertical {
@@ -103,19 +104,13 @@
 
 #offCanvaMenu {
     padding-top: 10vh;
+    z-index: 22;
 }
 
 #menuOffCanvaBody {
     display: flex;
     flex-direction: column;
     overflow: hidden;
-}
-
-#menuNav {
-}
-
-#sectionContainer {
-    /* padding-top: 10vh; */
 }
 
 .bordered {
@@ -125,7 +120,7 @@
     z-index: 0;
 }
 
-  /* Bordure top */
+/* Bordure top */
 .bordered::before {
     content: '';
     position: absolute;
@@ -137,7 +132,7 @@
     z-index: 1;
 }
 
-  /* Bordure left */
+/* Bordure left */
 .bordered::after {
     content: '';
     position: absolute;
@@ -155,17 +150,31 @@
 }
 
 .logo {
-    max-height: 40%;
+    z-index: 2;
+    max-height: 0%;
     transition: all 0.6s ease-in-out;
     position: fixed;
-    left: 33.9%;
-    top: 12%;
+    left: 50%;
+    top: 30%;
     transform: translate(-50%, -50%);
-    z-index: 10;
+}
+
+.growing {
+    animation: growing 0.6s ease-in-out forwards;
+}
+
+@keyframes growing {
+    from {
+        max-height: 0%;
+    }
+    to {
+        max-height: 33%;
+    }
 }
 
 .logo.mini-top-left {
-    max-height: 8vh;
+    z-index: 3 !important;
+    max-height: 8vh !important;
     left: 2vw;
     top: 1vh;
     transform: translate(0, 0);
@@ -184,11 +193,6 @@
 .commonFrame {
     height: 100%;
     width: 90%;
-}
-
-.sectionContent {
-    /* background-color: #00553C; */
-    /* border-radius: 8px; */
 }
 
 .logoSection {

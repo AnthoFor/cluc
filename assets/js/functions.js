@@ -91,26 +91,10 @@ export function menuAnimation(collapse) {
 export function miniLogoShow(targetSection) {
     if (targetSection == 1) {
         // Enleve le logo
-        logoAccueil.removeAttribute('data-aos');
         logoAccueil.classList.remove('mini-top-left');
-        logoAccueil.classList.remove('aos-init');
-        logoAccueil.classList.remove('aos-animate');
-        logoAccueil.style.left = '50%';
-        logoAccueil.style.top = '33%';
-        logoAccueil.style.transform= 'translate(-50%, -50%)';
-        // miniLogoLeft.classList.remove('opacityPlus');
-        // miniLogoLeft.classList.add('opacityLess');
     } else {
         // affiche le logo
-        logoAccueil.classList.remove('mini-top-left');
-        logoAccueil.classList.remove('aos-init');
-        logoAccueil.classList.remove('aos-animate');
         logoAccueil.classList.add('mini-top-left');
-        logoAccueil.style.left = '10px';
-        logoAccueil.style.top = '10px';
-        logoAccueil.style.transform= 'translate(0, 0)';
-        // miniLogoLeft.classList.remove('opacityLess');
-        // miniLogoLeft.classList.add('opacityPlus')
     }
 }
 
