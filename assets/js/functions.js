@@ -22,6 +22,27 @@ export function goesToSection(deltaY, isScrolling) {
     }
 }
 
+export function goToSection2(index, isAnimating, panels, current) {
+    if (index < 0) {
+        index = 0;
+    }
+    if(index > 5) {
+        index = 5;
+    }
+    if (isAnimating || index < 0 || index >= panels.length) return;
+    isAnimating = true;
+
+    gsap.to(panels, {
+      yPercent: i => (i - index) * 100,
+      duration: 0.8,
+      ease: "power2.inOut",
+      onComplete: () => isAnimating = false
+    });
+
+    current = index;
+    return index;
+  }
+
 export function recalcOnResize() {
 vh = vh = window.visualViewport ? window.visualViewport.height : window.innerHeight;
 totalSection = document.querySelectorAll('.nobsContainer').length
@@ -82,7 +103,7 @@ export function menuAnimation(collapse) {
             transformOrigin: "80% 0%",
             duration: 0.5,
         });
-        svgCalque.style.opacity = "100"
+        svgCalque.style.opacity = "1"
         needleCross.classList.add('opacityPlus');
         needleCross.classList.remove('opacityLess');
     }

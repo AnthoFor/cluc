@@ -5,11 +5,25 @@
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 12px;
 }
+body {
+    overflow: hidden;
+}
+#container {
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+}
+.panel {
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
 
 #header {
     height: 10vh;
     background: transparent;
-    z-index: 3;
 }
 
 /* Aiguille */
@@ -104,7 +118,7 @@
 
 #offCanvaMenu {
     padding-top: 10vh;
-    z-index: 22;
+    z-index: -1;
 }
 
 #menuOffCanvaBody {
@@ -171,7 +185,7 @@
 }
 
 .logo.mini-top-left {
-    z-index: 4 !important;
+    z-index: 2000 !important;
     max-height: 8vh !important;
     left: 5%;
     top: 5vh;

@@ -1,4 +1,4 @@
-import { goesToSection, recalcOnResize, menuAnimation, miniLogoShow } from "./functions.js";
+import { goesToSection, recalcOnResize, menuAnimation, miniLogoShow, goToSection2 } from "./functions.js";
 //Ecoute du scroll
 document.addEventListener('scroll', (e) => {
     if (window.scrollY <= 0) {
@@ -8,24 +8,49 @@ document.addEventListener('scroll', (e) => {
     }
 });
 
-// Ecouter les Touch
-document.addEventListener('touchstart', (e) => {
+window.addEventListener("touchstart", e => {
     startY = e.touches[0].clientY;
 });
 
-document.addEventListener('touchend', (e) => {
+window.addEventListener("touchend", e => {
     const endY = e.changedTouches[0].clientY;
-    const deltaY = startY - endY;
-    recalcOnResize();
-    // Ignore petits mouvements
-    if (Math.abs(deltaY) < 25 || isScrolling) return; 
-    isScrolling = true;
-    goesToSection(deltaY)
-    // Temps d'attente pour éviter déclenchement multiple
-    setTimeout(() => {
-        isScrolling = false;
-    }, 800); 
-})
+    const deltaY = endY - startY;
+
+        if (Math.abs(deltaY) > 50 && !isAnimating) {
+            if (deltaY < 0) {
+                console.log('section suivante ', current)
+                current = goToSection2(current + 1, isAnimating, panels, current); // Swipe up -> section suivante
+                console.log('section suivante ', current)
+            if (current >= 1) {
+                miniLogoShow(2)
+            }
+            } else {
+                console.log('section précédente', current)
+                current = goToSection2(current - 1, isAnimating, panels, current); // Swipe down -> section précédente
+                console.log('section précédente', current)
+                if (current == 0) {
+                    miniLogoShow(1)
+                }
+            }   
+    }
+});
+
+// Ecouter les Touch
+// document.addEventListener('touchstart', (e) => {
+//     startY = e.touches[0].clientY;
+// });
+
+// document.addEventListener('touchend', (e) => {
+//     const endY = e.changedTouches[0].clientY;
+//     const deltaY = startY - endY;
+//     recalcOnResize();
+//     if (Math.abs(deltaY) < 25 || isScrolling) return; 
+//     isScrolling = true;
+//     goesToSection(deltaY)
+//     setTimeout(() => {
+//         isScrolling = false;
+//     }, 800); 
+// })
 
 window.addEventListener('resize', function(e) {
     AOS.refresh();
@@ -125,3 +150,11 @@ logoAccueil.classList.add('growing');
 let collapse = true;
 let startY = 0;
 let isScrolling = false;
+const panels = document.querySelectorAll(".panel");
+let current = 0;
+let isAnimating = false;
+
+  // Position initiale de chaque section
+panels.forEach((panel, i) => {
+    gsap.set(panel, { yPercent: i * 100 });
+});
