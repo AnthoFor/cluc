@@ -158,7 +158,8 @@ body {
 
 .nobsContainer {
     height: 100vh;
-    padding: 15vh 1vw 1vh 1vw;
+    padding: 6vh 1vw 1vh 1vw;
+    margin-top: 17vh;
 }
 
 .logo {
@@ -202,7 +203,7 @@ body {
 
 /* SECTIONS */
 .commonFrame {
-    height: 90%;
+    height: 80%;
     width: 90%;
 }
 .sectionTitleLogo {
