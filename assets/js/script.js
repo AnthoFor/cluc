@@ -16,10 +16,10 @@ document.addEventListener('touchstart', (e) => {
 document.addEventListener('touchend', (e) => {
     const endY = e.changedTouches[0].clientY;
     const deltaY = startY - endY;
+    recalcOnResize();
     // Ignore petits mouvements
     if (Math.abs(deltaY) < 25 || isScrolling) return; 
     isScrolling = true;
-    recalcOnResize();
     goesToSection(deltaY)
     // Temps d'attente pour éviter déclenchement multiple
     setTimeout(() => {
