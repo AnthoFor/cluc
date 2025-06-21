@@ -113,14 +113,13 @@
     overflow: hidden;
 }
 
-.bordered {
+/* .bordered {
     position: relative;
     padding: 1rem;
     background: white;
     z-index: 0;
 }
 
-/* Bordure top */
 .bordered::before {
     content: '';
     position: absolute;
@@ -132,7 +131,6 @@
     z-index: 1;
 }
 
-/* Bordure left */
 .bordered::after {
     content: '';
     position: absolute;
@@ -142,7 +140,7 @@
     height: 100%;
     background: linear-gradient(180deg, #b1973b 0%, #ccaa40 40%, #cdaf31 60%, #b1973b 100%);
     z-index: 1;
-}
+} */
 
 .nobsContainer {
     height: 100vh;
@@ -193,9 +191,24 @@
     height: 100%;
     width: 90%;
 }
+.sectionTitleLogo {
+    width: 90%;
+    height: 10%;
+    background-repeat: no-repeat;
+    background-size:contain;
+    background-position: center;
+    background-image: url('../img/titleCiseaux.svg');
+}
 
-.logoSection {
-    width: 20%;
+.sectionTitle {
+font-size: 2rem;
+font-weight: 800;
+text-transform: uppercase;
+color: #418F6A;
+transform: rotate(-2deg); /* Texte incliné vers la gauche */
+display: inline-block; /* Important pour que rotate fonctionne bien */
+padding-left: 3vw;
+padding-top: 1vh;
 }
 
 .noshow {
@@ -212,25 +225,66 @@
     top: 2vh;
 }
 
-.prestations-list {
-    list-style: none;
-    padding-left: 0;
-    font-size: 1.1rem;
-    line-height: 1.6;
+.grid-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 93%;
+    gap: 13vw;
+    padding: 2rem;
+    box-sizing: border-box;
 }
 
-.prestations-list li {
-    position: relative;
-    padding-left: 1.5rem;
-    margin-bottom: 0.5rem;
+.column {
+    display: grid;
+    gap: 1rem;
 }
 
-.prestations-list li::before {
-    content: url("/cluc/assets/img/machineACoudre.svg");
-    position: absolute;
-    left: 0;
-    top: 0;
-    font-size: 1rem;
-    color: #b1973b;
-    width: 1.2rem;
+.left {
+    width: 35vw;
+    grid-template-rows: repeat(5, 1fr);
+}
+
+.right {
+    width: 35vw;
+    grid-template-rows: repeat(4, 1fr);
+    align-items: center;
+}
+
+.cellLeft {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.cellRight {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    height: 80%;
+}
+
+.bulle {
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+.text-bulle {
+    width: 90%;
+    text-align: center;
+    font-size: 0.9rem;
+    white-space: wrap;
+    text-transform: capitalize;
+}
+
+.separator {
+    width: 90%;
+    height: 2%;
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position: center;
+    background-image: url('../img/separateur.svg');
 }

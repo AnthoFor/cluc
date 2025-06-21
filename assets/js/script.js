@@ -93,6 +93,14 @@ document.addEventListener('keydown', function(event) {
 
 document.addEventListener('DOMContentLoaded', function() {
     recalcOnResize();
+    const bulles = document.querySelectorAll('.bulle');
+    const images = ['./assets/img/bulle1.svg', './assets/img/bulle2.svg', './assets/img/bulle3.svg', './assets/img/bulle4.svg'];
+
+    bulles.forEach(bulle => {
+        const randomIndex = Math.floor(Math.random() * images.length);
+        const imagePath = images[randomIndex];
+        bulle.style.backgroundImage = `url("${imagePath}")`;
+    });
 });
 
 AOS.init();
