@@ -8,6 +8,10 @@ document.addEventListener('scroll', (e) => {
     }
 });
 
+document.addEventListener('touchmove', function(event) {
+    event.preventDefault();
+}, { passive: false });
+
 window.addEventListener("touchstart", e => {
     startY = e.touches[0].clientY;
 });
