@@ -25,16 +25,16 @@ window.addEventListener("touchend", e => {
                 console.log('section suivante ', current)
                 current = goToSection2(current + 1, isAnimating, panels, current); // Swipe up -> section suivante
                 console.log('section suivante ', current)
-            if (current >= 1) {
-                miniLogoShow(2)
-            }
+            // if (current >= 1) {
+            //     miniLogoShow(2)
+            // }
             } else {
                 console.log('section précédente', current)
                 current = goToSection2(current - 1, isAnimating, panels, current); // Swipe down -> section précédente
                 console.log('section précédente', current)
-                if (current == 0) {
-                    miniLogoShow(1)
-                }
+                // if (current == 0) {
+                //     miniLogoShow(1)
+                // }
             }   
     }
 });
@@ -70,43 +70,36 @@ window.addEventListener('click', function(e){
     }
     if (e.target.id == 'logoAccueil' || e.target.id == 'accueil') {
         current = goToSection2(0, false, panels, current);
-        miniLogoShow(1)
     }
     if (e.target.id == 'accueil') {
         collapse = collapse ? false : true;
         menuAnimation(true)
         current = goToSection2(0, false, panels, current);
-        miniLogoShow(2)
     }
     if (e.target.id == 'prestation') {
         collapse = collapse ? false : true;
         menuAnimation(true)
         current = goToSection2(1, false, panels, current);
-        miniLogoShow(2);
     }
     if (e.target.id == 'tarif') {
         collapse = collapse ? false : true;
         menuAnimation(true)
         current = goToSection2(2, false, panels, current);
-        miniLogoShow(2);
     }
     if (e.target.id == 'realisation') {
         collapse = collapse ? false : true;
         menuAnimation(true)
-        document.querySelector('#section4').scrollIntoView({ behavior: 'smooth' })
-        miniLogoShow(2);
+        current = goToSection2(3, false, panels, current);
     }
     if (e.target.id == 'horaire') {
         collapse = collapse ? false : true;
         menuAnimation(true)
-        document.querySelector('#section5').scrollIntoView({ behavior: 'smooth' })
-        miniLogoShow(2);
+        current = goToSection2(4, false, panels, current);
     }
     if (e.target.id == 'acces') {
         collapse = collapse ? false : true;
         menuAnimation(true)
-        document.querySelector('#section6').scrollIntoView({ behavior: 'smooth' })
-        miniLogoShow(2);
+        current = goToSection2(5, false, panels, current);
     }
 })
 

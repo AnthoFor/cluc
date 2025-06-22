@@ -1,3 +1,4 @@
+gsap.registerPlugin(ScrollToPlugin);
 gsap.registerPlugin(MotionPathPlugin);
 
 export function goToSection2(index, isAnimating, panels, current) {
@@ -9,7 +10,7 @@ export function goToSection2(index, isAnimating, panels, current) {
     }
     if (isAnimating || index < 0 || index >= panels.length) return;
     isAnimating = true;
-
+    
     gsap.to(panels, {
       yPercent: i => (i - index) * 100,
       duration: 0.8,
@@ -17,13 +18,20 @@ export function goToSection2(index, isAnimating, panels, current) {
       onComplete: () => isAnimating = false
     });
 
-    setTimeout(function() {
-        if (index == 0) {
-            document.documentElement.scrollTop = 0; // Pour la plupart des navigateurs
-            document.body.scrollTop = 0; // Para SAFARI
-            console.log('gogo top 0')
-        }
-    }, 300);
+    if (index == 0) {
+        miniLogoShow(1)
+    } else {
+        miniLogoShow(2)
+    }
+    
+
+    // setTimeout(function() {
+    //     if (index == 0) {
+    //         document.documentElement.scrollTop = 0; // Pour la plupart des navigateurs
+    //         document.body.scrollTop = 0; // Para SAFARI
+    //         console.log('gogo top 0')
+    //     }
+    // }, 300);
 
     current = index;
     return index;
@@ -96,12 +104,14 @@ export function miniLogoShow(targetSection) {
         // Remet le logo en gros au milieu
         header.style.background = "transparent";
         logoAccueil.classList.remove('mini-top-left');
+        console.log("grossis le logo")
     } else {
         // affiche le logo en haut a gauche en petit
         logoAccueil.classList.add('mini-top-left');
         setTimeout(function() {
             header.style.background = "rgba(255, 255, 255, 1)";
         }, 800);
+        console.log("rapetisse le logo")
     }
 }
 
