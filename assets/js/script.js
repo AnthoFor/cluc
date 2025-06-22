@@ -8,6 +8,7 @@ document.addEventListener('scroll', (e) => {
     }
 });
 
+// empeche le pull to refresh qui empechait de pouvoir remonter dans les sections
 document.addEventListener('touchmove', function(event) {
     event.preventDefault();
 }, { passive: false });
@@ -100,7 +101,6 @@ document.addEventListener('DOMContentLoaded', function() {
         bulle.style.backgroundImage = `url("${imagePath}")`;
     });
 });
-
 
 // Pour revenir à l'accueuil en cas de refresh
 window.scrollTo({ top: 0, behavior: 'smooth' });
