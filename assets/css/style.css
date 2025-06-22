@@ -5,20 +5,24 @@
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 12px;
 }
+
 body {
     overflow: hidden;
 }
+
 #container {
     height: 100vh;
     width: 100vw;
     position: relative;
 }
+
 .panel {
     height: 100vh;
     width: 100vw;
     position: absolute;
     top: 0;
     left: 0;
+    padding: 12vh 1vw 1vh 1vw;
 }
 
 #header {
@@ -155,12 +159,6 @@ body {
     background: linear-gradient(180deg, #b1973b 0%, #ccaa40 40%, #cdaf31 60%, #b1973b 100%);
     z-index: 1;
 } */
-
-.nobsContainer {
-    height: 100vh;
-    padding: 6vh 1vw 1vh 1vw;
-    margin-top: 17vh;
-}
 
 .logo {
     z-index: 2;

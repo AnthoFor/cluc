@@ -1,27 +1,5 @@
 gsap.registerPlugin(MotionPathPlugin);
 
-export function goesToSection(deltaY, isScrolling) {
-    // let totalSections = 5;
-    const currentSection = Math.round(window.scrollY / sectionHeight);
-    let targetSection = currentSection;
-
-    if (deltaY > 0) {
-        // swipe vers le haut → aller vers section suivante
-        targetSection = Math.min(currentSection + 1, totalSection - 1);
-    } else {
-        // swipe vers le bas → aller vers section précédente
-        targetSection = Math.max(currentSection - 1, 0);
-    }
-
-    const targetId = `section${targetSection + 1}`;
-    const targetEl = document.getElementById(targetId);
-
-    if (targetId) {
-        miniLogoShow(targetSection+1);
-        targetEl.scrollIntoView({ behavior: 'smooth' });
-    }
-}
-
 export function goToSection2(index, isAnimating, panels, current) {
     if (index < 0) {
         index = 0;
@@ -39,15 +17,19 @@ export function goToSection2(index, isAnimating, panels, current) {
       onComplete: () => isAnimating = false
     });
 
+    setTimeout(function() {
+        if (index == 0) {
+            document.documentElement.scrollTop = 0; // Pour la plupart des navigateurs
+            document.body.scrollTop = 0; // Para SAFARI
+            console.log('gogo top 0')
+        }
+    }, 300);
+
     current = index;
     return index;
-  }
+}
 
 export function recalcOnResize() {
-vh = vh = window.visualViewport ? window.visualViewport.height : window.innerHeight;
-totalSection = document.querySelectorAll('.nobsContainer').length
-totalVh = vh * totalSection;
-sectionHeight = totalVh / totalSection;
 TxtAtelierClucWidth = document.getElementById('txtAtelierCluc').offsetWidth;
 document.getElementById('txtRetouchesEtCreation').style.width = TxtAtelierClucWidth + 'px';
 const rect = needleNav.getBoundingClientRect();
@@ -126,10 +108,6 @@ export function miniLogoShow(targetSection) {
 // Var
 let TxtAtelierClucWidth = document.getElementById('txtAtelierCluc').offsetWidth;
 document.getElementById('txtRetouchesEtCreation').style.width = TxtAtelierClucWidth + 'px';
-let vh = window.visualViewport ? window.visualViewport.height : window.innerHeight;
-let totalSection = document.querySelectorAll('.nobsContainer').length
-let totalVh = vh * totalSection;
-let sectionHeight = totalVh / totalSection;
 let countMenu = false;
 let svg = Snap("#svgCalque");
 let monChemin = svg.select("#path");

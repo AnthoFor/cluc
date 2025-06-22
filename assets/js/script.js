@@ -1,4 +1,4 @@
-import { goesToSection, recalcOnResize, menuAnimation, miniLogoShow, goToSection2 } from "./functions.js";
+import { recalcOnResize, menuAnimation, miniLogoShow, goToSection2 } from "./functions.js";
 //Ecoute du scroll
 document.addEventListener('scroll', (e) => {
     if (window.scrollY <= 0) {
@@ -69,51 +69,44 @@ window.addEventListener('click', function(e){
         menuAnimation(collapse)
     }
     if (e.target.id == 'logoAccueil' || e.target.id == 'accueil') {
-        document.querySelector('#section1').scrollIntoView({ behavior: 'smooth' })
+        current = goToSection2(0, false, panels, current);
         miniLogoShow(1)
-        recalcOnResize();
     }
     if (e.target.id == 'accueil') {
         collapse = collapse ? false : true;
         menuAnimation(true)
-        document.querySelector('#section1').scrollIntoView({ behavior: 'smooth' })
+        current = goToSection2(0, false, panels, current);
         miniLogoShow(2)
-        recalcOnResize();
     }
     if (e.target.id == 'prestation') {
         collapse = collapse ? false : true;
         menuAnimation(true)
-        document.querySelector('#section2').scrollIntoView({ behavior: 'smooth' })
+        current = goToSection2(1, false, panels, current);
         miniLogoShow(2);
-        recalcOnResize();
     }
     if (e.target.id == 'tarif') {
         collapse = collapse ? false : true;
         menuAnimation(true)
-        document.querySelector('#section3').scrollIntoView({ behavior: 'smooth' })
+        current = goToSection2(2, false, panels, current);
         miniLogoShow(2);
-        recalcOnResize();
     }
     if (e.target.id == 'realisation') {
         collapse = collapse ? false : true;
         menuAnimation(true)
         document.querySelector('#section4').scrollIntoView({ behavior: 'smooth' })
         miniLogoShow(2);
-        recalcOnResize();
     }
     if (e.target.id == 'horaire') {
         collapse = collapse ? false : true;
         menuAnimation(true)
         document.querySelector('#section5').scrollIntoView({ behavior: 'smooth' })
         miniLogoShow(2);
-        recalcOnResize();
     }
     if (e.target.id == 'acces') {
         collapse = collapse ? false : true;
         menuAnimation(true)
         document.querySelector('#section6').scrollIntoView({ behavior: 'smooth' })
         miniLogoShow(2);
-        recalcOnResize();
     }
 })
 
@@ -125,7 +118,6 @@ document.addEventListener('keydown', function(event) {
         }
     }
 })
-
 
 document.addEventListener('DOMContentLoaded', function() {
     recalcOnResize();
@@ -139,21 +131,19 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-AOS.init();
 
 // Pour revenir à l'accueuil en cas de refresh
-document.querySelector('#section1').scrollIntoView({ behavior: 'smooth' })
+window.scrollTo({ top: 0, behavior: 'smooth' });
 // Permet de faire la même chose qu'AOS sans le decalage
 logoAccueil.classList.add('growing');
     setTimeout(() => {
         logoAccueil.style.maxHeight = "33%";
         logoAccueil.classList.remove('growing');
-    }, 600);
+    }, 800);
 
 // Var
 let collapse = true;
 let startY = 0;
-let isScrolling = false;
 const panels = document.querySelectorAll(".panel");
 let current = 0;
 let isAnimating = false;
@@ -162,3 +152,6 @@ let isAnimating = false;
 panels.forEach((panel, i) => {
     gsap.set(panel, { yPercent: i * 100 });
 });
+
+// Initialisation d'AOS
+AOS.init();
