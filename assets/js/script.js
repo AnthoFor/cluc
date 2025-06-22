@@ -25,36 +25,13 @@ window.addEventListener("touchend", e => {
                 console.log('section suivante ', current)
                 current = goToSection2(current + 1, isAnimating, panels, current); // Swipe up -> section suivante
                 console.log('section suivante ', current)
-            // if (current >= 1) {
-            //     miniLogoShow(2)
-            // }
             } else {
                 console.log('section précédente', current)
                 current = goToSection2(current - 1, isAnimating, panels, current); // Swipe down -> section précédente
                 console.log('section précédente', current)
-                // if (current == 0) {
-                //     miniLogoShow(1)
-                // }
             }   
     }
 });
-
-// Ecouter les Touch
-// document.addEventListener('touchstart', (e) => {
-//     startY = e.touches[0].clientY;
-// });
-
-// document.addEventListener('touchend', (e) => {
-//     const endY = e.changedTouches[0].clientY;
-//     const deltaY = startY - endY;
-//     recalcOnResize();
-//     if (Math.abs(deltaY) < 25 || isScrolling) return; 
-//     isScrolling = true;
-//     goesToSection(deltaY)
-//     setTimeout(() => {
-//         isScrolling = false;
-//     }, 800); 
-// })
 
 window.addEventListener('resize', function(e) {
     AOS.refresh();

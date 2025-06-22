@@ -1,4 +1,3 @@
-gsap.registerPlugin(ScrollToPlugin);
 gsap.registerPlugin(MotionPathPlugin);
 
 export function goToSection2(index, isAnimating, panels, current) {
@@ -24,15 +23,6 @@ export function goToSection2(index, isAnimating, panels, current) {
         miniLogoShow(2)
     }
     
-
-    // setTimeout(function() {
-    //     if (index == 0) {
-    //         document.documentElement.scrollTop = 0; // Pour la plupart des navigateurs
-    //         document.body.scrollTop = 0; // Para SAFARI
-    //         console.log('gogo top 0')
-    //     }
-    // }, 300);
-
     current = index;
     return index;
 }
