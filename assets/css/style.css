@@ -205,7 +205,7 @@ body {
 
 /* SECTIONS */
 .commonFrame {
-    height: 95%;
+    height: 100%;
     width: 90%;
 }
 .sectionTitleLogo {
@@ -236,7 +236,7 @@ padding-top: 1vh;
 .grid-wrapper {
     width: 100%;
     flex-grow: 1;
-    max-height: 60%;
+    max-height: 70%;
 }
 
 .grid-9x2 {
@@ -290,7 +290,6 @@ padding-top: 1vh;
     flex-flow: column;
     justify-content: center;
     align-items: center;
-    /* padding: 1vw; */
 }
 
 .texte-prestation {
