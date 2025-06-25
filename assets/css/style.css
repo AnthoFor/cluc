@@ -236,7 +236,7 @@ padding-top: 1vh;
 .grid-wrapper {
     width: 100%;
     flex-grow: 1;
-    max-height: 63%;
+    max-height: 60%;
 }
 
 .grid-9x2 {
@@ -295,6 +295,7 @@ padding-top: 1vh;
 
 .texte-prestation {
     text-align: center;
+    font-size: 0.9rem;
 }
 
 .separator {
