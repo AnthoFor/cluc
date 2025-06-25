@@ -45,8 +45,8 @@ console.log('section TITLE height: '+ document.getElementById('sectionTitleLogo'
 console.log(commonFrameVH - document.getElementById('sectionTitleLogo').offsetHeight - document.getElementById('gridwrapper').offsetHeight - document.getElementById('separatorspan').offsetHeight);
     if (totalVH < commonFrameVH) {
         alert('la totalite VH est inferieur à la hauteur common frame')
-        let calcCommonFrameVH = totalVH - document.getElementById('sectionTitleLogo').offsetHeight - document.getElementById('separatorspan').offsetHeight;
-        document.getElementById('section2').style.height = (calcCommonFrameVH - 10) + 'px';
+        let calcCommonFrameVH = totalVH - (document.getElementById('sectionTitleLogo').offsetHeight - document.getElementById('separatorspan').offsetHeight);
+        document.getElementById('section2').style.height = (calcCommonFrameVH) + 'px';
     }
 }
 
