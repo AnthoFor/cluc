@@ -22,7 +22,7 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    padding: 12vh 1vw 1vh 1vw;
+    padding: 10vh 1vw 1vh 1vw;
     background-image: url('../img/commonFrameBG.svg');
     background-position: left 1vw top 12vh;
     background-repeat: no-repeat;
@@ -216,6 +216,7 @@ body {
     background-position: center;
     background-image: url('../img/titleAiguille.svg');
     margin-left: 13vw;
+    margin-top: 1vh;
 }
 
 .sectionTitle {
