@@ -176,7 +176,7 @@ body {
 
 /* SECTIONS */
 .commonFrame {
-    height: 70%;
+    height: 80%;
     width: 90%;
 }
 .sectionTitleLogo {
@@ -187,7 +187,6 @@ body {
     background-position: center top 1vh;
     background-image: url('../img/titleAiguille.svg');
     margin-left: 13vw;
-    padding-top: 2vh;
 }
 
 .sectionTitle {
@@ -215,7 +214,7 @@ padding-top: 1vh;
     display: grid;
     grid-template-columns: 7% 87%;
     grid-template-rows: repeat(9, 1fr); 
-    height: 100%;
+    height: 80%;
     gap: 0.5vh;
 }
 
