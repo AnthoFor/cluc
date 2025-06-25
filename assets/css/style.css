@@ -23,6 +23,10 @@ body {
     top: 0;
     left: 0;
     padding: 12vh 1vw 1vh 1vw;
+    background-image: url('../img/commonFrameBG.svg');
+    background-position: left 1vw top 12vh;
+    background-repeat: no-repeat;
+    background-size: 30vw auto;
 }
 
 #header {
@@ -201,13 +205,8 @@ body {
 
 /* SECTIONS */
 .commonFrame {
-    background-image: url('../img/commonFrameBG.svg');
-    background-position: top left;
-    background-repeat: no-repeat;
-    background-size: 30vw auto;
     height: 95%;
     width: 90%;
-
 }
 .sectionTitleLogo {
     width: 90%;
@@ -236,7 +235,7 @@ padding-top: 1vh;
 
 .grid-wrapper {
     width: 100%;
-    height: 70%;
+    height: 68%;
 }
 
 .grid-9x2 {
@@ -244,7 +243,7 @@ padding-top: 1vh;
     grid-template-columns: 7% 87%;
     grid-template-rows: repeat(10, 1fr); 
     height: 100%;
-    gap: 1vh;
+    gap: 0.5vh;
 }
 
 .col-10-g {
@@ -256,7 +255,7 @@ padding-top: 1vh;
 
 .col-90-g {
     border-radius: 50%;
-    border: 4px solid transparent;
+    border: 3px solid transparent;
     background-color: white;
     border-image: radial-gradient(circle, #00684f 0%, #00553c 100%) 1;
 
@@ -271,7 +270,7 @@ padding-top: 1vh;
 
 .col-90-y {
     border-radius: 50%;
-    border: 4px solid transparent;
+    border: 3px solid transparent;
     background-color: white;
     border-image: linear-gradient(
     315deg,
@@ -290,7 +289,7 @@ padding-top: 1vh;
     flex-flow: column;
     justify-content: center;
     align-items: center;
-    padding: 1vw;
+    /* padding: 1vw; */
 }
 
 .texte-prestation {
