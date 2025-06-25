@@ -108,14 +108,17 @@ const panels = document.querySelectorAll(".panel");
 let current = 0;
 let isAnimating = false;
 
-  // Position initiale de chaque section
-panels.forEach((panel, i) => {
-    gsap.set(panel, { yPercent: i * 100 });
-});
 
 // Initialisation d'AOS
 AOS.init();
 
 // Pour revenir à l'accueil en cas de refresh
-section1.scrollIntoView({ behavior: 'smooth' });
-current = goToSection2(0, false, panels, current);
+window.scrollTo({ top: 0, behavior: 'smooth' });
+
+// Position initiale de chaque section
+setTimeout(() => {
+    panels.forEach((panel, i) => {
+    gsap.set(panel, { yPercent: i * 100 });
+    });
+    // current = goToSection2(0, false, panels, current);
+}, 10);
