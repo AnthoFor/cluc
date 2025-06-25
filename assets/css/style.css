@@ -216,7 +216,7 @@ body {
     background-position: center;
     background-image: url('../img/titleAiguille.svg');
     margin-left: 13vw;
-    margin-top: 1vh;
+    margin-top: 3vh;
 }
 
 .sectionTitle {
@@ -237,7 +237,8 @@ padding-top: 1vh;
 .grid-wrapper {
     width: 100%;
     flex-grow: 1;
-    max-height: 70%;
+    /* max-height: 80%; */
+    padding: 2vh;
 }
 
 .grid-9x2 {
