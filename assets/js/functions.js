@@ -46,6 +46,9 @@ console.log(commonFrameVH - document.getElementById('sectionTitleLogo').offsetHe
     if (commonFrameVH - document.getElementById('sectionTitleLogo').offsetHeight - document.getElementById('gridwrapper').offsetHeight - document.getElementById('separatorspan').offsetHeight > 0 ) {
         alert('SUPERIEUR A 0');
     }
+    if (totalVH < commonFrameVH) {
+        alert('la totalite VH est inferieur à la hauteur common frame')
+    }
 }
 
 export function menuAnimation(collapse) {
