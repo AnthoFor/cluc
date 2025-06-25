@@ -235,7 +235,8 @@ padding-top: 1vh;
 
 .grid-wrapper {
     width: 100%;
-    height: 68%;
+    flex-grow: 1;
+    max-height: 68%;
 }
 
 .grid-9x2 {
