@@ -43,9 +43,9 @@ console.log('grid 9x2 height: '+ document.getElementById('grid9x2').offsetHeight
 console.log('separator height: '+ document.getElementById('separatorspan').offsetHeight + ' px');
 console.log('section TITLE height: '+ document.getElementById('sectionTitleLogo').offsetHeight + ' px');
 console.log(commonFrameVH - document.getElementById('sectionTitleLogo').offsetHeight - document.getElementById('gridwrapper').offsetHeight - document.getElementById('separatorspan').offsetHeight);
-if (commonFrameVH - document.getElementById('sectionTitleLogo').offsetHeight - document.getElementById('gridwrapper').offsetHeight - document.getElementById('separatorspan').offsetHeight < 0 ) {
-    alert('kikoo');
-}
+    if (commonFrameVH - document.getElementById('sectionTitleLogo').offsetHeight - document.getElementById('gridwrapper').offsetHeight - document.getElementById('separatorspan').offsetHeight > 0 ) {
+        alert('SUPERIEUR A 0');
+    }
 }
 
 export function menuAnimation(collapse) {
