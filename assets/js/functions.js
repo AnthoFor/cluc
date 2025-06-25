@@ -34,6 +34,18 @@ document.getElementById('txtRetouchesEtCreation').style.width = TxtAtelierClucWi
 const rect = needleNav.getBoundingClientRect();
 const distanceRight = window.innerWidth - rect.right;
 kikooDiv.style.right = (distanceRight / 10) + 'px';
+const totalVH = window.innerHeight;
+// const 
+const commonFrameVH = document.getElementById('section2').offsetHeight;
+console.log('common frame height: '+ commonFrameVH + ' px');
+console.log('grid wrapper height: '+ document.getElementById('gridwrapper').offsetHeight + ' px');
+console.log('grid 9x2 height: '+ document.getElementById('grid9x2').offsetHeight + ' px');
+console.log('separator height: '+ document.getElementById('separatorspan').offsetHeight + ' px');
+console.log('section TITLE height: '+ document.getElementById('sectionTitleLogo').offsetHeight + ' px');
+console.log(commonFrameVH - document.getElementById('sectionTitleLogo').offsetHeight - document.getElementById('gridwrapper').offsetHeight - document.getElementById('separatorspan').offsetHeight);
+if (commonFrameVH - document.getElementById('sectionTitleLogo').offsetHeight - document.getElementById('gridwrapper').offsetHeight - document.getElementById('separatorspan').offsetHeight < 0 ) {
+    alert('kikoo');
+}
 }
 
 export function menuAnimation(collapse) {
