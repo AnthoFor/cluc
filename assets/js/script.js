@@ -92,18 +92,8 @@ document.addEventListener('keydown', function(event) {
 
 document.addEventListener('DOMContentLoaded', function() {
     recalcOnResize();
-    const bulles = document.querySelectorAll('.bulle');
-    const images = ['./assets/img/bulle1.svg', './assets/img/bulle2.svg', './assets/img/bulle3.svg', './assets/img/bulle4.svg'];
-
-    bulles.forEach(bulle => {
-        const randomIndex = Math.floor(Math.random() * images.length);
-        const imagePath = images[randomIndex];
-        bulle.style.backgroundImage = `url("${imagePath}")`;
-    });
 });
 
-// Pour revenir à l'accueuil en cas de refresh
-window.scrollTo({ top: 0, behavior: 'smooth' });
 // Permet de faire la même chose qu'AOS sans le decalage
 logoAccueil.classList.add('growing');
     setTimeout(() => {
@@ -125,3 +115,7 @@ panels.forEach((panel, i) => {
 
 // Initialisation d'AOS
 AOS.init();
+
+// Pour revenir à l'accueil en cas de refresh
+section1.scrollIntoView({ behavior: 'smooth' });
+current = goToSection2(0, false, panels, current);

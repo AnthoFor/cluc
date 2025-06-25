@@ -1,11 +1,12 @@
 gsap.registerPlugin(MotionPathPlugin);
 
 export function goToSection2(index, isAnimating, panels, current) {
+    console.log(panels.length)
     if (index < 0) {
         index = 0;
     }
-    if(index > 5) {
-        index = 5;
+    if(index > panels.length - 1) {
+        index = panels.length - 1;
     }
     if (isAnimating || index < 0 || index >= panels.length) return;
     isAnimating = true;
