@@ -175,6 +175,10 @@ body {
 }
 
 /* SECTIONS */
+#section1 {
+    background-image: unset !important;
+    background-size: unset;
+}
 .commonFrame {
     flex-grow: 1;
     width: 90%;
