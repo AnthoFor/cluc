@@ -273,7 +273,7 @@ transform: translate(20%, 80%) rotate(-2deg);
     min-height: 2vh;
     background-repeat: no-repeat;
     background-size:contain;
-    background-position: center bottom 6vh;
+    background-position: center bottom 9vh;
     background-image: url('../img/separateur.svg');
     padding-bottom: 1vh;
     z-index: 456;
