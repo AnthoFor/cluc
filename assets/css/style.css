@@ -175,18 +175,24 @@ body {
 }
 
 /* SECTIONS */
+.spacer {
+    height: 10vh;
+}
+
 .commonFrame {
-    height: 80%;
+    flex-grow: 1;
     width: 90%;
 }
 .sectionTitleLogo {
     width: 90%;
-    height: 10%;
+    flex-grow: 1;
+    /* height: 10%; */
     background-repeat: no-repeat;
     background-size:contain;
-    background-position: center top 1vh;
+    background-position: center top 1px;
     background-image: url('../img/titleAiguille.svg');
     margin-left: 13vw;
+    margin-bottom: 1vh;
 }
 
 .sectionTitle {
@@ -206,15 +212,15 @@ padding-top: 1vh;
 
 .grid-wrapper {
     width: 100%;
-    flex-grow: 1;
-    padding: 2vh;
+    flex-grow: 6;
+    /* padding: 1vh; */
 }
 
 .grid-9x2 {
     display: grid;
     grid-template-columns: 7% 87%;
     grid-template-rows: repeat(9, 1fr); 
-    height: 80%;
+    height: 90%;
     gap: 0.5vh;
 }
 
@@ -270,11 +276,12 @@ padding-top: 1vh;
 
 .separator {
     width: 90%;
-    height: 2%;
+    flex-grow: 2;
+    /* height: 2%; */
     background-repeat: no-repeat;
-    background-size:cover;
-    background-position: center;
+    background-size:contain;
+    background-position: top;
     background-image: url('../img/separateur.svg');
-    margin-bottom: 2vh;
+    /* margin-bottom: 2vh; */
     z-index: 456;
 }
