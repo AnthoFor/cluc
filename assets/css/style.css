@@ -186,7 +186,8 @@ body {
 }
 .sectionTitleLogo {
     width: 90%;
-    height: 12vh;
+    flex-grow: 1;
+    /* height: 12vh; */
     background-repeat: no-repeat;
     background-size:contain;
     background-position: center bottom 0px;
@@ -214,7 +215,6 @@ transform: translate(20%, 80%) rotate(-2deg);
     border: 3px solid transparent;
     background-color: white;
     border-image: radial-gradient(circle, #00684f 0%, #00553c 100%) 1;
-    height: 10cqh;
     padding: 5px;
 }
 .goldishBorder {
@@ -230,8 +230,11 @@ transform: translate(20%, 80%) rotate(-2deg);
     #bd8d00 73%,
     #e4b45c 91%,
     #ebbc6d 95%) 1;
-    height: 10cqh;
     padding: 5px;
+}
+
+.h-10cqh {
+    height: 10cqh;
 }
 
 .texte-prestation {
@@ -252,7 +255,7 @@ transform: translate(20%, 80%) rotate(-2deg);
 
 #carouselPrestations {
     width: 90%;
-    /* flex-grow: 1; */
+    flex-grow: 2;
 }
 .carrouselPrestationCSS {
     display: flex;
@@ -266,7 +269,7 @@ transform: translate(20%, 80%) rotate(-2deg);
 }
 #lastPrestaFrame {
     flex-grow: 1;
-    padding: 22px;
+    /* padding: 22px; */
     margin-top: 1vh;
     margin-bottom: 4vh;
     display: flex;
