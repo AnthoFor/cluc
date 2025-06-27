@@ -252,7 +252,7 @@ transform: translate(20%, 80%) rotate(-2deg);
 
 #carouselPrestations {
     width: 90%;
-    flex-grow: 3;
+    /* flex-grow: 1; */
 }
 .carrouselPrestationCSS {
     display: flex;
@@ -265,10 +265,10 @@ transform: translate(20%, 80%) rotate(-2deg);
     width: unset !important;
 }
 #lastPrestaFrame {
-    flex-grow: 2;
+    flex-grow: 1;
     padding: 22px;
     margin-top: 1vh;
-    margin-bottom: 3vh;
+    margin-bottom: 4vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -276,5 +276,5 @@ transform: translate(20%, 80%) rotate(-2deg);
 #lastPrestaFrame > p {
     text-align: justify;
     text-transform: uppercase;
-    font-size: clamp(0.3rem, 3cqw, 1.8rem);
+    font-size: clamp(0.2rem, 2.7cqw, 1.4rem);
 }
