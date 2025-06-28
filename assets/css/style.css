@@ -27,6 +27,7 @@ body {
     background-position: left 1vw top 12vh;
     background-repeat: no-repeat;
     background-size: 30vw auto;
+    border: 1px solid blue;
 }
 
 #header {
@@ -249,7 +250,7 @@ transform: translate(20%, 80%) rotate(-2deg);
 .sectionTitleLogo {
     width: 90%;
     /* flex-grow: 1; */
-    padding-top: 10%;
+    padding-top: 5%;
     height: 20%;
     background-repeat: no-repeat;
     background-size:contain;
