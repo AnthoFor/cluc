@@ -180,14 +180,16 @@ body {
     background-size: unset;
 }
 .commonFrame {
-    flex-grow: 1;
+    /* flex-grow: 1; */
+    height: 90%;
     width: 90%;
     padding: 3vh 0 0 0;
+    border: 1px solid black;
 }
 .sectionTitleLogo {
     width: 90%;
-    flex-grow: 1;
-    /* height: 12vh; */
+    /* flex-grow: 1; */
+    height: 20%;
     background-repeat: no-repeat;
     background-size:contain;
     background-position: center bottom 0px;
@@ -244,8 +246,9 @@ transform: translate(20%, 80%) rotate(-2deg);
 
 .separator {
     min-width: 90%;
-    flex-grow: 1;
-    min-height: 2vh;
+    /* flex-grow: 1; */
+    /* min-height: 2vh; */
+    height: 10%;
     background-repeat: no-repeat;
     background-size:contain;
     background-position: center;
@@ -255,7 +258,8 @@ transform: translate(20%, 80%) rotate(-2deg);
 
 #carouselPrestations {
     width: 90%;
-    flex-grow: 2;
+    /* flex-grow: 2; */
+    height: 50%;
 }
 .carrouselPrestationCSS {
     display: flex;
@@ -268,8 +272,9 @@ transform: translate(20%, 80%) rotate(-2deg);
     width: unset !important;
 }
 #lastPrestaFrame {
-    flex-grow: 1;
-    /* padding: 22px; */
+    /* flex-grow: 1; */
+    padding: 10px;
+    height: 10%;
     margin-top: 1vh;
     margin-bottom: 4vh;
     display: flex;
@@ -279,5 +284,6 @@ transform: translate(20%, 80%) rotate(-2deg);
 #lastPrestaFrame > p {
     text-align: justify;
     text-transform: uppercase;
-    font-size: clamp(0.2rem, 2.7cqw, 1.4rem);
+    font-size: clamp(0.3rem, 1.5cqw, 1rem);
+    margin-bottom: unset !important;
 }
