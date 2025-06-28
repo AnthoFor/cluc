@@ -17,7 +17,7 @@ body {
 }
 
 .panel {
-    height: 100vh;
+    height: 100dvh;
     width: 100vw;
     position: absolute;
     top: 0;
@@ -31,7 +31,7 @@ body {
 }
 
 #header {
-    height: 10vh;
+    height: 10dvh;
     background: transparent;
 }
 
@@ -183,9 +183,9 @@ body {
 
 .commonFrame {
     /* flex-grow: 1; */
-    height: 90%;
+    height: 100%;
     width: 90%;
-    padding: 3vh 0 0 0;
+    /* padding: 3vh 0 0 0; */
     border: 1px solid black;
 }
 
@@ -233,7 +233,7 @@ transform: translate(20%, 80%) rotate(-2deg);
 
 .texte-prestation {
     text-align: center;
-    font-size: clamp(0.5rem, 2.8cqw, 2rem);
+    font-size: clamp(0.5rem, 2.9cqw, 1.9rem);
 }
 
 .carrouselPrestationCSS {
@@ -250,7 +250,8 @@ transform: translate(20%, 80%) rotate(-2deg);
 .sectionTitleLogo {
     width: 90%;
     /* flex-grow: 1; */
-    padding-top: 5%;
+    /* padding-top: 10%; */
+    margin-top: 10%;
     height: 20%;
     background-repeat: no-repeat;
     background-size:contain;
@@ -278,10 +279,10 @@ transform: translate(20%, 80%) rotate(-2deg);
 }
 
 #lastPrestaFrame {
-    /* flex-grow: 1; */
+    flex-grow: 1;
     padding: 10px;
     height: 10%;
-    margin-top: 1vh;
+    /* margin-top: 1vh; */
     /* margin-bottom: 4vh; */
     display: flex;
     flex-direction: column;
@@ -291,6 +292,6 @@ transform: translate(20%, 80%) rotate(-2deg);
 #lastPrestaFrame > p {
     text-align: justify;
     text-transform: uppercase;
-    font-size: clamp(0.3rem, 1.5cqw, 1rem);
+    font-size: clamp(0.3rem, 1.8cqw, 1.8rem);
     margin-bottom: unset !important;
 }
