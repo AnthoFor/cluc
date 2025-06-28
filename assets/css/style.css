@@ -22,12 +22,10 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    /* padding: 10vh 1vw 1vh 1vw; */
     background-image: url('../img/commonFrameBG.svg');
     background-position: left 1vw top 12vh;
     background-repeat: no-repeat;
     background-size: 30vw auto;
-    border: 1px solid blue;
 }
 
 #header {
@@ -139,6 +137,7 @@ body {
 .logo {
     z-index: 2;
     max-height: 0%;
+    max-width: 20%;
     transition: all 0.6s ease-in-out;
     position: fixed;
     left: 50%;
@@ -167,7 +166,7 @@ body {
 }
 
 .logoText {
-    max-height: 30%;
+    max-height: 25%;
     max-width: 70%;
 }
 
@@ -180,24 +179,12 @@ body {
     background-image: unset !important;
     background-size: unset;
 }
-
+#logoSpacerWelcome {
+    height: 33%;
+}
 .commonFrame {
-    /* flex-grow: 1; */
     height: 100%;
     width: 90%;
-    /* padding: 3vh 0 0 0; */
-    border: 1px solid black;
-}
-
-.sectionTitle {
-font-size: 2rem;
-font-weight: 800;
-text-transform: uppercase;
-color: #418F6A;
-display: inline-block;
-/* Par rapport à .sectionTitleLogo */
-position: absolute;
-transform: translate(20%, 80%) rotate(-2deg);
 }
 
 .noshow {
@@ -228,7 +215,7 @@ transform: translate(20%, 80%) rotate(-2deg);
 }
 
 .h-10cqh {
-    height: 8cqh;
+    height: 10cqh;
 }
 
 .texte-prestation {
@@ -243,33 +230,49 @@ transform: translate(20%, 80%) rotate(-2deg);
     padding: 4vh;
     gap: 0.7vh;
 }
+
 .w-unset {
     width: unset !important;
 }
 
 .sectionTitleLogo {
     width: 90%;
-    /* flex-grow: 1; */
-    /* padding-top: 10%; */
-    margin-top: 10%;
+    margin-top: 11%;
     height: 20%;
     background-repeat: no-repeat;
-    background-size:contain;
-    background-position: center bottom 0px;
-    background-image: url('../img/titleAiguille.svg');
-    position: relative;
+    background-size: contain;
+    background-position: center bottom;
+    /* background-image: url('../img/titleAiguille.svg'); */
+}
+#prestationLogo {
+    background-image: url('../img/titlePrestations.svg');
+}
+#tarifsLogo {
+    background-image: url('../img/titleTarifs.svg');
+}
+#realisationsLogo {
+    background-image: url('../img/titleRealisations.svg');
+}
+#horairesLogo {
+    background-image: url('../img/titleHoraires.svg');
+}
+#accesLogo {
+    background-image: url('../img/titleAcces.svg');
+}
+#carouselContainer {
+    width: 90%;
+    height: 50%;
 }
 
-#carouselPrestations {
-    width: 90%;
-    /* flex-grow: 2; */
-    height: 50%;
+#tarifsContainer, 
+#realisationsContainer, 
+#horairesContainer,
+#accesContainer {
+    height: 60%;
 }
 
 .separator {
     min-width: 90%;
-    /* flex-grow: 1; */
-    /* min-height: 2vh; */
     height: 10%;
     background-repeat: no-repeat;
     background-size:contain;
@@ -282,11 +285,10 @@ transform: translate(20%, 80%) rotate(-2deg);
     flex-grow: 1;
     padding: 10px;
     height: 10%;
-    /* margin-top: 1vh; */
-    /* margin-bottom: 4vh; */
     display: flex;
     flex-direction: column;
     justify-content: center;
+    margin-bottom: 5px;
 }
 
 #lastPrestaFrame > p {
