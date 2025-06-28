@@ -22,7 +22,7 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    padding: 10vh 1vw 1vh 1vw;
+    /* padding: 10vh 1vw 1vh 1vw; */
     background-image: url('../img/commonFrameBG.svg');
     background-position: left 1vw top 12vh;
     background-repeat: no-repeat;
@@ -179,22 +179,13 @@ body {
     background-image: unset !important;
     background-size: unset;
 }
+
 .commonFrame {
     /* flex-grow: 1; */
     height: 90%;
     width: 90%;
     padding: 3vh 0 0 0;
     border: 1px solid black;
-}
-.sectionTitleLogo {
-    width: 90%;
-    /* flex-grow: 1; */
-    height: 20%;
-    background-repeat: no-repeat;
-    background-size:contain;
-    background-position: center bottom 0px;
-    background-image: url('../img/titleAiguille.svg');
-    position: relative;
 }
 
 .sectionTitle {
@@ -236,12 +227,41 @@ transform: translate(20%, 80%) rotate(-2deg);
 }
 
 .h-10cqh {
-    height: 10cqh;
+    height: 8cqh;
 }
 
 .texte-prestation {
     text-align: center;
-    font-size: clamp(0.5rem, 3.5cqw, 2rem);
+    font-size: clamp(0.5rem, 2.8cqw, 2rem);
+}
+
+.carrouselPrestationCSS {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    padding: 4vh;
+    gap: 0.7vh;
+}
+.w-unset {
+    width: unset !important;
+}
+
+.sectionTitleLogo {
+    width: 90%;
+    /* flex-grow: 1; */
+    padding-top: 10%;
+    height: 20%;
+    background-repeat: no-repeat;
+    background-size:contain;
+    background-position: center bottom 0px;
+    background-image: url('../img/titleAiguille.svg');
+    position: relative;
+}
+
+#carouselPrestations {
+    width: 90%;
+    /* flex-grow: 2; */
+    height: 50%;
 }
 
 .separator {
@@ -256,31 +276,17 @@ transform: translate(20%, 80%) rotate(-2deg);
     z-index: 456;
 }
 
-#carouselPrestations {
-    width: 90%;
-    /* flex-grow: 2; */
-    height: 50%;
-}
-.carrouselPrestationCSS {
-    display: flex;
-    height: 100%;
-    width: 100%;
-    padding: 4vh;
-    gap: 0.7vh;
-}
-.w-unset {
-    width: unset !important;
-}
 #lastPrestaFrame {
     /* flex-grow: 1; */
     padding: 10px;
     height: 10%;
     margin-top: 1vh;
-    margin-bottom: 4vh;
+    /* margin-bottom: 4vh; */
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
+
 #lastPrestaFrame > p {
     text-align: justify;
     text-transform: uppercase;
