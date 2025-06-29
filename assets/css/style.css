@@ -242,7 +242,6 @@ body {
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center bottom;
-    /* background-image: url('../img/titleAiguille.svg'); */
 }
 #prestationLogo {
     background-image: url('../img/titlePrestations.svg');
@@ -271,6 +270,29 @@ body {
     height: 60%;
 }
 
+#tarifsContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+#tarifsBox1 {
+    /* flex-grow: 1; */
+    width: 100%;
+    height: 20%;
+}
+#tarifsBox1 > p {
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: clamp(0.3rem, 2cqw, 1.8cqh);
+    width: 100%;
+}
+#tarifsBox2 {
+    flex: auto;
+    width: 100%;
+}
 .separator {
     min-width: 90%;
     height: 10%;
@@ -294,6 +316,84 @@ body {
 #lastPrestaFrame > p {
     text-align: justify;
     text-transform: uppercase;
-    font-size: clamp(0.3rem, 1.8cqw, 1.8rem);
-    margin-bottom: unset !important;
+    font-size: clamp(0.3rem, 2.2cqw, 1.8rem);
+}
+
+.dottedLineYellow {
+    /* border-bottom: 2px dashed #bd8d00; */
+    position: relative;
+    z-index: 0;
+}
+.dottedLineYellow::before {
+    content: '';
+    position: absolute;
+    top: 0px;
+    bottom: 0.15vh;
+    left: 0px;
+    right: 0px;
+    border-bottom: 2px dashed #bd8d00;
+    z-index: -1;
+}
+.dottedLineGreen {
+    /* border-bottom: 2px dashed #00553c; */
+    position: relative;
+    z-index: 0;
+}
+.dottedLineGreen::before {
+    content: '';
+    position: absolute;
+    top: 0px;
+    bottom: 0.15vh;
+    left: 0px;
+    right: 0px;
+    border-bottom: 2px dashed #00553c;
+    z-index: -1;
+}
+
+.bullePriceYellow {
+    /* angle arrondis + taille figé + background en degradé */
+    border-radius: 9999px;
+    height: 2vh;
+    width: 10vw;
+    background: linear-gradient(
+    315deg,
+    #eabe66 0%,
+    #efcf76 15%,
+    #f0d47a 19%,
+    #fbf1e1 41%,
+    #bd8d00 73%,
+    #e4b45c 91%,
+    #ebbc6d 95%);
+    font-weight: bold;
+    padding: 1.5vh;
+}
+
+.bullePriceGreen {
+    border-radius: 9999px;
+    height: 2vh;
+    width: 10vw;
+    background: radial-gradient(circle, #00684fCC 0%, #00553cCC 100%);
+    font-weight: bold;
+    padding: 1.5vh;
+}
+
+.listeTarifs > span > span {
+    font-size: clamp(0.5rem, 3.3cqw, 1.5cqh);
+}
+.fs-TarifsPrice {
+    font-size: clamp(0.5rem, 3.3cqw, 1.5cqh);
+}
+
+.titreListeTarifs {
+    background-repeat: no-repeat;
+    background-size: 20vw;
+    background-position: center bottom;
+    background-image: url('../img/ruban.svg');
+}
+
+.titreListeTarifs > span {
+    font-weight: bold;
+    text-transform: uppercase;
+    padding-bottom: 1vw;
+    font-size: clamp(1rem, 3cqw, 1.8cqh);
 }
