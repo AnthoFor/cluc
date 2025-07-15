@@ -11,11 +11,21 @@ export function goToSection2(index, isAnimating, panels, current) {
     if (isAnimating || index < 0 || index >= panels.length) return;
     isAnimating = true;
     
+
+        panels.forEach((panel, i) => {
+        if (i === index) {
+            gsap.to(panel, { opacity: 1 });
+        } else {
+            gsap.to(panel, { opacity: 0 });
+        }
+    });
+
     gsap.to(panels, {
       yPercent: i => (i - index) * 100,
       duration: 0.8,
       ease: "power2.inOut",
-      onComplete: () => isAnimating = false
+      onComplete: () => 
+        isAnimating = false
     });
 
     if (index == 0) {
@@ -118,6 +128,20 @@ export function miniLogoShow(targetSection) {
         }, 800);
         console.log("rapetisse le logo")
     }
+}
+
+export function animatePancarte() {
+    gsap.to("#svgWrapperHoraire img", {  
+        keyframes: [
+        { rotation: 15, duration: 0 },
+        { rotation: -12, duration: 1 },
+        { rotation: 9, duration: 1 },
+        { rotation: -6, duration: 1 },
+        { rotation: 3, duration: 1 },
+        { rotation: 0, duration: 1 },
+        ],
+        ease: "power2.out"
+        });
 }
 
 // Var

@@ -26,6 +26,7 @@ body {
     background-position: left 1vw top 12vh;
     background-repeat: no-repeat;
     background-size: 30vw auto;
+    opacity: 0;
 }
 
 #header {
@@ -238,7 +239,7 @@ body {
 .sectionTitleLogo {
     width: 90%;
     margin-top: 11%;
-    height: 20%;
+    height: 17%;
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center bottom;
@@ -295,7 +296,7 @@ body {
 }
 .separator {
     min-width: 90%;
-    height: 10%;
+    height: 5%;
     background-repeat: no-repeat;
     background-size:contain;
     background-position: center bottom;
@@ -304,9 +305,9 @@ body {
 }
 
 #lastPrestaFrame {
-    flex-grow: 1;
+    /* flex-grow: 1; */
     padding: 10px;
-    height: 10%;
+    height: 15%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -332,7 +333,7 @@ body {
     bottom: 0.15vh;
     left: 0px;
     right: 0px;
-    border-bottom: 2px dashed #bd8d00;
+    border-bottom: 1px dashed #bd8d00;
     z-index: -1;
 }
 .dottedLineGreen {
@@ -347,7 +348,7 @@ body {
     bottom: 0.15vh;
     left: 0px;
     right: 0px;
-    border-bottom: 2px dashed #00553c;
+    border-bottom: 1px dashed #00553c;
     z-index: -1;
 }
 
@@ -401,4 +402,12 @@ body {
 
 .dottedLineGreen > span, .dottedLineYellow > span {
     font-size: clamp(0.5rem, 2.2cqw, 1.5cqh);
+    font-style: italic;
+}
+
+#svgWrapperHoraire img {
+    width: 80vw;
+    height: auto;
+    transform-origin: top center;
+    display: block;
 }

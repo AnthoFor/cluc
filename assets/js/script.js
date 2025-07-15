@@ -1,4 +1,4 @@
-import { recalcOnResize, menuAnimation, miniLogoShow, goToSection2 } from "./functions.js";
+import { recalcOnResize, menuAnimation, miniLogoShow, goToSection2, animatePancarte } from "./functions.js";
 //Ecoute du scroll
 document.addEventListener('scroll', (e) => {
     if (window.scrollY <= 0) {
@@ -30,6 +30,9 @@ window.addEventListener("touchend", e => {
                 console.log('section précédente', current)
                 current = goToSection2(current - 1, isAnimating, panels, current); // Swipe down -> section précédente
                 console.log('section précédente', current)
+            }
+            if (current == 4 ) {
+                animatePancarte();
             }   
     }
 });
@@ -73,6 +76,7 @@ window.addEventListener('click', function(e){
         collapse = collapse ? false : true;
         menuAnimation(true)
         current = goToSection2(4, false, panels, current);
+        animatePancarte();
     }
     if (e.target.id == 'acces') {
         collapse = collapse ? false : true;
@@ -122,3 +126,5 @@ setTimeout(() => {
     });
     // current = goToSection2(0, false, panels, current);
 }, 10);
+
+panels[0].style.opacity = 1
