@@ -216,20 +216,20 @@ body {
 }
 
 .h-10cqh {
-    height: 10cqh;
+    height: 30%;
 }
 
 .texte-prestation {
     text-align: center;
-    font-size: clamp(0.5rem, 2.9cqw, 1.9rem);
+    font-size: clamp(0.5rem, 4cqw, 1.9rem);
 }
 
 .carrouselPrestationCSS {
     display: flex;
     height: 100%;
     width: 100%;
-    padding: 4vh;
-    gap: 0.7vh;
+    padding: 2vh 0.3vw 2vh 0.3vw;
+    gap: 0.6vh;
 }
 
 .w-unset {
@@ -318,11 +318,10 @@ body {
 #lastPrestaFrame > p {
     text-align: justify;
     text-transform: uppercase;
-    font-size: clamp(0.3rem, 2.2cqw, 1.5cqh);
+    font-size: clamp(0.3rem, 2.8cqw, 1.5cqh);
 }
 
 .dottedLineYellow {
-    /* border-bottom: 2px dashed #bd8d00; */
     position: relative;
     z-index: 0;
 }
@@ -337,7 +336,6 @@ body {
     z-index: -1;
 }
 .dottedLineGreen {
-    /* border-bottom: 2px dashed #00553c; */
     position: relative;
     z-index: 0;
 }

@@ -1,7 +1,6 @@
 gsap.registerPlugin(MotionPathPlugin);
 
 export function goToSection2(index, isAnimating, panels, current) {
-    console.log(panels.length)
     if (index < 0) {
         index = 0;
     }
@@ -11,30 +10,25 @@ export function goToSection2(index, isAnimating, panels, current) {
     if (isAnimating || index < 0 || index >= panels.length) return;
     isAnimating = true;
     
-
-        panels.forEach((panel, i) => {
+    panels.forEach((panel, i) => {
         if (i === index) {
             gsap.to(panel, { opacity: 1 });
-        } else {
-            gsap.to(panel, { opacity: 0 });
         }
     });
 
     gsap.to(panels, {
       yPercent: i => (i - index) * 100,
-      duration: 0.8,
-      ease: "power2.inOut",
-      onComplete: () => 
+        duration: 0.8,
+        ease: "power2.inOut",
+        onComplete: () => 
         isAnimating = false
     });
 
-    if (index == 0) {
-        miniLogoShow(1)
-    } else {
-        miniLogoShow(2)
-    }
-    
+    miniLogoShow(index === 0 ? 1 : 2);
     current = index;
+    if (index > 0) {
+        animateActiveSection(panels[index]);
+    }
     return index;
 }
 
@@ -44,20 +38,6 @@ document.getElementById('txtRetouchesEtCreation').style.width = TxtAtelierClucWi
 const rect = needleNav.getBoundingClientRect();
 const distanceRight = window.innerWidth - rect.right;
 kikooDiv.style.right = (distanceRight / 10) + 'px';
-
-// const totalVH = window.innerHeight;
-// const commonFrameVH = document.getElementById('section2').offsetHeight;
-// console.log('common frame height: '+ commonFrameVH + ' px');
-// console.log('grid wrapper height: '+ document.getElementById('gridwrapper').offsetHeight + ' px');
-// console.log('grid 9x2 height: '+ document.getElementById('grid9x2').offsetHeight + ' px');
-// console.log('separator height: '+ document.getElementById('separatorspan').offsetHeight + ' px');
-// console.log('section TITLE height: '+ document.getElementById('sectionTitleLogo').offsetHeight + ' px');
-// console.log(commonFrameVH - document.getElementById('sectionTitleLogo').offsetHeight - document.getElementById('gridwrapper').offsetHeight - document.getElementById('separatorspan').offsetHeight);
-// if (totalVH < commonFrameVH) {
-//     alert('la totalite VH est inferieur à la hauteur common frame')
-//     let calcCommonFrameVH = totalVH - (document.getElementById('sectionTitleLogo').offsetHeight - document.getElementById('separatorspan').offsetHeight);
-//     document.getElementById('section2').style.height = (calcCommonFrameVH) + 'px';
-// }
 }
 
 export function menuAnimation(collapse) {
@@ -142,6 +122,13 @@ export function animatePancarte() {
         ],
         ease: "power2.out"
         });
+}
+
+function animateActiveSection(panel) {
+    gsap.fromTo(panel.querySelector('.sectionTitleLogo'), 
+        { opacity: 0, x: -2500 },
+        { opacity: 1, x: 0, duration: 0.8, ease: "power2.out" }
+    );
 }
 
 // Var
