@@ -100,11 +100,13 @@ export function miniLogoShow(targetSection) {
         header.style.background = "transparent";
         logoAccueil.classList.remove('mini-top-left');
         console.log("grossis le logo")
+        miniTexteLogoTopLeft.style.opacity = "0";
     } else {
         // affiche le logo en haut a gauche en petit
         logoAccueil.classList.add('mini-top-left');
         setTimeout(function() {
             header.style.background = "rgba(255, 255, 255, 1)";
+            miniTexteLogoTopLeft.style.opacity = "1";
         }, 800);
         console.log("rapetisse le logo")
     }
@@ -127,7 +129,7 @@ export function animatePancarte() {
 function animateActiveSection(panel) {
     gsap.fromTo(panel.querySelector('.sectionTitleLogo'), 
         { opacity: 0, x: -2500 },
-        { opacity: 1, x: 0, duration: 0.8, ease: "power2.out" }
+        { opacity: 1, x: 0, duration: 0.8, ease: "power2.out", delay:0.2 }
     );
 }
 
