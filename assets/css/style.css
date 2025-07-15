@@ -216,7 +216,7 @@ body {
 }
 
 .h-10cqh {
-    height: 30%;
+    height: 27%;
 }
 
 .texte-prestation {
@@ -380,7 +380,7 @@ body {
 }
 
 .listeTarifs > span > span {
-    font-size: clamp(0.5rem, 3.3cqw, 1.3cqh);
+    font-size: clamp(0.5rem, 3.3cqw, 2cqh);
 }
 .fs-TarifsPrice {
     font-size: clamp(0.5rem, 3.3cqw, 1.5cqh);
