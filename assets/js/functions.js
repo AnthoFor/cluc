@@ -29,6 +29,9 @@ export function goToSection2(index, isAnimating, panels, current) {
     if (index > 0) {
         animateActiveSection(panels[index]);
     }
+    if (current == 4 ) {
+        animatePancarte();
+    } 
     return index;
 }
 
@@ -99,7 +102,6 @@ export function miniLogoShow(targetSection) {
         // Remet le logo en gros au milieu
         header.style.background = "transparent";
         logoAccueil.classList.remove('mini-top-left');
-        console.log("grossis le logo")
         miniTexteLogoTopLeft.style.opacity = "0";
     } else {
         // affiche le logo en haut a gauche en petit
@@ -108,7 +110,6 @@ export function miniLogoShow(targetSection) {
             header.style.background = "rgba(255, 255, 255, 1)";
             miniTexteLogoTopLeft.style.opacity = "1";
         }, 800);
-        console.log("rapetisse le logo")
     }
 }
 
@@ -126,6 +127,7 @@ export function animatePancarte() {
         });
 }
 
+// Permet l'animation du titre de chaque panel
 function animateActiveSection(panel) {
     gsap.fromTo(panel.querySelector('.sectionTitleLogo'), 
         { opacity: 0, x: -2500 },
@@ -139,7 +141,8 @@ document.getElementById('txtRetouchesEtCreation').style.width = TxtAtelierClucWi
 let countMenu = false;
 let svg = Snap("#svgCalque");
 let monChemin = svg.select("#path");
-let longueurChemin = Snap.path.getTotalLength(monChemin); // Longueur totale du chemin du "path"
+// Longueur totale du chemin du "path"
+let longueurChemin = Snap.path.getTotalLength(monChemin); 
 
 // Définir la longueur du chemin à 0 au début de l'animation
 monChemin.attr({

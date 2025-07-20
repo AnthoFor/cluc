@@ -1,4 +1,6 @@
 import { recalcOnResize, menuAnimation, miniLogoShow, goToSection2, animatePancarte } from "./functions.js";
+// EVENTLISTENER 
+
 //Ecoute du scroll
 document.addEventListener('scroll', (e) => {
     if (window.scrollY <= 0) {
@@ -20,28 +22,31 @@ window.addEventListener("touchstart", e => {
 window.addEventListener("touchend", e => {
     const endY = e.changedTouches[0].clientY;
     const deltaY = endY - startY;
-
         if (Math.abs(deltaY) > 50 && !isAnimating) {
             if (deltaY < 0) {
-                console.log('section suivante ', current)
                 current = goToSection2(current + 1, isAnimating, panels, current); // Swipe up -> section suivante
-                console.log('section suivante ', current)
             } else {
-                console.log('section précédente', current)
                 current = goToSection2(current - 1, isAnimating, panels, current); // Swipe down -> section précédente
-                console.log('section précédente', current)
             }
-            if (current == 4 ) {
-                animatePancarte();
-            }   
+    }
+});
+
+window.addEventListener('wheel', (e) => {
+    const delta = e.deltaY;
+    if (delta > 0) {
+            // lastScrollDirection = 'down';
+            console.log('Scroll vers le bas');
+            current = goToSection2(current + 1, isAnimating, panels, current);
+    } else if (delta < 0) {
+            // lastScrollDirection = 'up';
+            console.log('Scroll vers le haut');
+            current = goToSection2(current - 1, isAnimating, panels, current);
     }
 });
 
 window.addEventListener('resize', function(e) {
     AOS.refresh();
-    console.log('aos refreshed');
     recalcOnResize();
-    console.log('section height updated');
 })
 
 window.addEventListener('click', function(e){
@@ -111,6 +116,7 @@ let startY = 0;
 const panels = document.querySelectorAll(".panel");
 let current = 0;
 let isAnimating = false;
+// let lastScrollDirection = null;
 
 
 // Initialisation d'AOS
@@ -124,7 +130,6 @@ setTimeout(() => {
     panels.forEach((panel, i) => {
     gsap.set(panel, { yPercent: i * 100 });
     });
-    // current = goToSection2(0, false, panels, current);
 }, 10);
 
 panels[0].style.opacity = 1
