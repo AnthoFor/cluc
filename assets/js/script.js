@@ -15,11 +15,11 @@ let currentIndex = 0;
 let isAnimatingC = false;
 const realisationItems = [
 	{ name: "Création", role: "Cul sec, gardez votre fessier au sec" },
-	{ name: "Réparation", role: "blablabla" },
-	{ name: "Création", role: "blablabla" },
-	{ name: "Réparation", role: "blablabla" },
-	{ name: "Création", role: "blablabla" },
-	{ name: "Réparation", role: "blablabla" }
+	{ name: "Création", role: "Chouchou" },
+	{ name: "Création", role: "Etiquettes à bagages personalisées" },
+	{ name: "Réparation", role: "Manteau sauvé" },
+	{ name: "Création", role: "Furoshiki, emballage cadeau en tissu" },
+	{ name: "Création", role: "Sac à pain" }
 ];
 let touchStartX = 0;
 let touchEndX = 0;
