@@ -40,7 +40,7 @@ TxtAtelierClucWidth = document.getElementById('txtAtelierCluc').offsetWidth;
 document.getElementById('txtRetouchesEtCreation').style.width = TxtAtelierClucWidth + 'px';
 const rect = needleNav.getBoundingClientRect();
 const distanceRight = window.innerWidth - rect.right;
-kikooDiv.style.right = (distanceRight / 10) + 'px';
+kikooDiv.style.right = (distanceRight / 2) + 'px';
 }
 
 export function menuAnimation(collapse) {

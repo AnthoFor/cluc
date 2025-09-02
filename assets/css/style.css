@@ -43,6 +43,7 @@ body {
 
 .positionCustom {
     transform: translate(83vw, 4vh) rotate(-90deg);
+    z-index: 22;
     /* top: 30px;
     right: 60px; */
 }
