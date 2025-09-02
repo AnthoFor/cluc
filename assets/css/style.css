@@ -42,7 +42,9 @@ body {
 }
 
 .positionCustom {
-    transform: translate(83vw, 4vh) rotate(-90deg);
+    transform: rotate(-90deg);
+    left: 83%;
+    top: 4vh;
     z-index: 1031;
 }
 
@@ -52,10 +54,10 @@ body {
 
 @keyframes needleToVertical {
     from {
-        transform: translate(83vw, 4vh) rotate(-90deg);
+        transform: rotate(-90deg);
     }
     to {
-        transform: translate(83vw, 4vh) rotate(-45deg);
+        transform: rotate(-45deg);
     }
 }
 
@@ -65,10 +67,10 @@ body {
 
 @keyframes needleToHorizontal {
     from {
-        transform: translate(83vw, 4vh) rotate(-45deg);
+        transform: rotate(-45deg);
     }
     to {
-        transform: translate(83vw, 4vh) rotate(-90deg);
+        transform: rotate(-90deg);
     }
 }
 
@@ -79,7 +81,9 @@ body {
 #needleCross {
     max-height: 8vh;
     min-height: 50px;
-    transform: translate(83vw, 4vh) rotate(45deg) !important;
+    top: 4%;
+    left: 83%;
+    transform: rotate(45deg) !important;
     opacity: 0;
 }
 
