@@ -38,18 +38,15 @@ body {
 #needleNav {
     max-height: 8vh;
     min-height: 50px;
-    /* transform: rotate(-90deg); */
 }
 
 .positionCustom {
     transform: translate(83vw, 4vh) rotate(-90deg);
-    z-index: 22;
-    /* top: 30px;
-    right: 60px; */
+    z-index: 1031;
 }
 
 #kikooDiv {
-    width: 100vw;
+    /* width: 100vw; */
     top: 40px;
     z-index: 22;
 }

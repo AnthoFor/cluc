@@ -39,8 +39,13 @@ export function recalcOnResize() {
 TxtAtelierClucWidth = document.getElementById('txtAtelierCluc').offsetWidth;
 document.getElementById('txtRetouchesEtCreation').style.width = TxtAtelierClucWidth + 'px';
 const rect = needleNav.getBoundingClientRect();
-const distanceRight = window.innerWidth - rect.right;
-kikooDiv.style.right = (distanceRight / 2) + 'px';
+// Calculer le centre de needleNav
+const centerX = rect.left + rect.width / 2;
+const centerY = rect.top + rect.height / 2;
+
+// const distanceRight = window.innerWidth - rect.right;
+kikooDiv.style.left = `${centerX - kikooDiv.offsetWidth / 2}px`;
+// kikooDiv.style.top = `${centerY - kikooDiv.offsetHeight / 2}px`;
 }
 
 export function menuAnimation(collapse) {

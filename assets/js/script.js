@@ -73,6 +73,7 @@ window.addEventListener('resize', function(e) {
 })
 
 window.addEventListener('click', function(e){
+    console.log(e.target.id);
     if (e.target.id == 'needleNav' || e.target.id == "svgCalque" || e.target.id == "needleCross") {        
         collapse = collapse ? false : true;
         menuAnimation(collapse)
