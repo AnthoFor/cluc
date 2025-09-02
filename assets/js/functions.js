@@ -127,6 +127,75 @@ export function animatePancarte() {
         });
 }
 
+export function updateCarousel(newIndex, isAnimatingC, cards, currentIndex, dots, realisationItems) {
+    let memberName = document.querySelector(".member-name");
+    let memberRole = document.querySelector(".member-role");
+	if (isAnimatingC) return;
+	isAnimatingC = true;
+
+	currentIndex = (newIndex + cards.length) % cards.length;
+
+	cards.forEach((card, i) => {
+		const offset = (i - currentIndex + cards.length) % cards.length;
+
+		card.classList.remove(
+			"center",
+			"left-1",
+			"left-2",
+			"right-1",
+			"right-2",
+			"hidden"
+		);
+
+		if (offset === 0) {
+			card.classList.add("center");
+		} else if (offset === 1) {
+			card.classList.add("right-1");
+		} else if (offset === 2) {
+			card.classList.add("right-2");
+		} else if (offset === cards.length - 1) {
+			card.classList.add("left-1");
+		} else if (offset === cards.length - 2) {
+			card.classList.add("left-2");
+		} else {
+			card.classList.add("hidden");
+		}
+	});
+
+	dots.forEach((dot, i) => {
+		dot.classList.toggle("active", i === currentIndex);
+	});
+
+	memberName.style.opacity = "0";
+	memberRole.style.opacity = "0";
+
+	setTimeout(() => {
+		memberName.textContent = realisationItems[currentIndex].name;
+		memberRole.textContent = realisationItems[currentIndex].role;
+		memberName.style.opacity = "1";
+		memberRole.style.opacity = "1";
+	}, 300);
+
+	setTimeout(() => {
+		isAnimatingC = false;
+	}, 800);
+    return currentIndex;
+}
+
+export function handleSwipe(touchStartX, touchEndX, isAnimatingC, cards, currentIndex, dots, realisationItems) {
+	const swipeThreshold = 50;
+	const diff = touchStartX - touchEndX;
+
+	if (Math.abs(diff) > swipeThreshold) {
+		if (diff > 0) {
+			currentIndex = updateCarousel(currentIndex + 1, isAnimatingC, cards, currentIndex, dots, realisationItems);
+		} else {
+			currentIndex = updateCarousel(currentIndex - 1, isAnimatingC, cards, currentIndex, dots, realisationItems);
+		}
+	}
+    return currentIndex;
+}
+
 // Permet l'animation du titre de chaque panel
 function animateActiveSection(panel) {
     gsap.fromTo(panel.querySelector('.sectionTitleLogo'), 

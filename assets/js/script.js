@@ -1,7 +1,30 @@
-import { recalcOnResize, menuAnimation, miniLogoShow, goToSection2, animatePancarte } from "./functions.js";
-// EVENTLISTENER 
+import { recalcOnResize, menuAnimation, miniLogoShow, goToSection2, animatePancarte, updateCarousel, handleSwipe } from "./functions.js";
+// VAR
+let collapse = true;
+let startY = 0;
+const panels = document.querySelectorAll(".panel");
+// le current global de la page pour swipe entre les sections
+let current = 0;
+let isAnimating = false;
+const cards = document.querySelectorAll(".card");
+const dots = document.querySelectorAll(".dot");
+const leftArrow = document.querySelector(".nav-arrow.left");
+const rightArrow = document.querySelector(".nav-arrow.right");
+// index du caroussel de réalisations
+let currentIndex = 0;
+let isAnimatingC = false;
+const realisationItems = [
+	{ name: "Création", role: "Cul sec, gardez votre fessier au sec" },
+	{ name: "Réparation", role: "blablabla" },
+	{ name: "Création", role: "blablabla" },
+	{ name: "Réparation", role: "blablabla" },
+	{ name: "Création", role: "blablabla" },
+	{ name: "Réparation", role: "blablabla" }
+];
+let touchStartX = 0;
+let touchEndX = 0;
 
-//Ecoute du scroll
+// EVENTLISTENER 
 document.addEventListener('scroll', (e) => {
     if (window.scrollY <= 0) {
         miniLogoShow(1)
@@ -103,6 +126,43 @@ document.addEventListener('DOMContentLoaded', function() {
     recalcOnResize();
 });
 
+leftArrow.addEventListener("click", () => {
+	currentIndex = updateCarousel(currentIndex - 1, isAnimatingC, cards, currentIndex, dots, realisationItems);
+});
+
+rightArrow.addEventListener("click", () => {
+	currentIndex = updateCarousel(currentIndex + 1, isAnimatingC, cards, currentIndex, dots, realisationItems);
+});
+
+dots.forEach((dot, i) => {
+	dot.addEventListener("click", () => {
+		currentIndex = updateCarousel(i, isAnimatingC, cards, currentIndex, dots, realisationItems);
+	});
+});
+
+cards.forEach((card, i) => {
+	card.addEventListener("click", () => {
+		currentIndex = updateCarousel(i, isAnimatingC, cards, currentIndex, dots, realisationItems);
+	});
+});
+
+document.addEventListener("keydown", (e) => {
+	if (e.key === "ArrowLeft") {
+		currentIndex = updateCarousel(currentIndex - 1, isAnimatingC, cards, currentIndex, dots, realisationItems);
+	} else if (e.key === "ArrowRight") {
+		currentIndex = updateCarousel(currentIndex + 1, isAnimatingC, cards, currentIndex, dots, realisationItems);
+	}
+});
+
+document.addEventListener("touchstart", (e) => {
+	touchStartX = e.changedTouches[0].screenX;
+});
+
+document.addEventListener("touchend", (e) => {
+	touchEndX = e.changedTouches[0].screenX;
+	currentIndex = handleSwipe(touchStartX, touchEndX, isAnimatingC, cards, currentIndex, dots, realisationItems);
+});
+
 // Permet de faire la même chose qu'AOS sans le decalage
 logoAccueil.classList.add('growing');
     setTimeout(() => {
@@ -110,13 +170,6 @@ logoAccueil.classList.add('growing');
         logoAccueil.classList.remove('growing');
     }, 800);
 
-// Var
-let collapse = true;
-let startY = 0;
-const panels = document.querySelectorAll(".panel");
-let current = 0;
-let isAnimating = false;
-// let lastScrollDirection = null;
 
 
 // Initialisation d'AOS
@@ -133,3 +186,7 @@ setTimeout(() => {
 }, 10);
 
 panels[0].style.opacity = 1
+
+
+
+updateCarousel(0, isAnimatingC,cards, currentIndex, dots, realisationItems);
