@@ -38,12 +38,13 @@ body {
 #needleNav {
     max-height: 8vh;
     min-height: 50px;
-    transform: rotate(-90deg);
+    /* transform: rotate(-90deg); */
 }
 
 .positionCustom {
-    top: 30px;
-    right: 60px;
+    transform: translate(83vw, 4vh) rotate(-90deg);
+    /* top: 30px;
+    right: 60px; */
 }
 
 #kikooDiv {
@@ -54,10 +55,10 @@ body {
 
 @keyframes needleToVertical {
     from {
-        transform: rotate(-90deg);
+        transform: translate(83vw, 4vh) rotate(-90deg);
     }
     to {
-        transform: rotate(-45deg);
+        transform: translate(83vw, 4vh) rotate(-45deg);
     }
 }
 
@@ -67,10 +68,10 @@ body {
 
 @keyframes needleToHorizontal {
     from {
-        transform: rotate(-45deg);
+        transform: translate(83vw, 4vh) rotate(-45deg);
     }
     to {
-        transform: rotate(-90deg);
+        transform: translate(83vw, 4vh) rotate(-90deg);
     }
 }
 
@@ -81,7 +82,7 @@ body {
 #needleCross {
     max-height: 8vh;
     min-height: 50px;
-    transform: rotate(45deg);
+    transform: translate(83vw, 4vh) rotate(45deg) !important;
     opacity: 0;
 }
 
@@ -170,9 +171,10 @@ body {
     transition: all 0.6s ease-in-out;
     opacity: 0;
     position: fixed;
-    left: 10%;
-    top: 4vh;
+    /* left: 10%;
+    top: 4vh; */
     max-height: 2vh;
+    transform: translate(10vw, 4vh);
 }
 
 .logoText {
