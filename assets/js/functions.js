@@ -45,7 +45,7 @@ const centerY = rect.top + rect.height / 2;
 
 // const distanceRight = window.innerWidth - rect.right;
 kikooDiv.style.left = `${centerX - kikooDiv.offsetWidth / 2}px`;
-// kikooDiv.style.top = `${centerY - kikooDiv.offsetHeight / 2}px`;
+kikooDiv.style.top = `${centerY}px`;
 }
 
 export function menuAnimation(collapse) {

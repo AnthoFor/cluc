@@ -46,8 +46,6 @@ body {
 }
 
 #kikooDiv {
-    /* width: 100vw; */
-    top: 40px;
     z-index: 22;
 }
 
@@ -112,7 +110,7 @@ body {
 
 /* Fil (path) */
 #svgCalque {
-    max-height: 25vh;
+    max-height: 20vh;
     min-width: 120px;
     opacity: 0;
 }
