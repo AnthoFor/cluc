@@ -137,6 +137,10 @@ body {
     overflow: hidden;
 }
 
+.menuIcon {
+    max-height: 25vh;
+}
+
 .logo {
     z-index: 2;
     max-height: 0%;

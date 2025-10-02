@@ -202,13 +202,35 @@ export function handleSwipe(touchStartX, touchEndX, isAnimatingC, cards, current
 }
 
 // Permet l'animation du titre de chaque panel
-function animateActiveSection(panel) {
+export function animateActiveSection(panel) {
     gsap.fromTo(panel.querySelector('.sectionTitleLogo'), 
         { opacity: 0, x: -2500 },
         { opacity: 1, x: 0, duration: 0.8, ease: "power2.out", delay:0.2 }
     );
 }
 
+export function checkOverflow(parentSelector, childSelector) {
+    const parent = parentSelector
+    const child = childSelector;
+    if (!parent || !child) return;
+    const parentRect = parent.getBoundingClientRect();
+    const childRect = child[0].getBoundingClientRect();
+    const isOverflowing =
+    childRect.top < parentRect.top ||
+    childRect.left < parentRect.left ||
+    childRect.bottom > parentRect.bottom ||
+    childRect.right > parentRect.right
+    if (isOverflowing) {
+        child.forEach(element => {
+            element.style.opacity = "0";
+        });
+
+        } else {
+        child.forEach(element => {
+            element.style.opacity = "1";
+        })
+    }
+}
 // Var
 let TxtAtelierClucWidth = document.getElementById('txtAtelierCluc').offsetWidth;
 document.getElementById('txtRetouchesEtCreation').style.width = TxtAtelierClucWidth + 'px';

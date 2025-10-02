@@ -1,4 +1,4 @@
-import { recalcOnResize, menuAnimation, miniLogoShow, goToSection2, animatePancarte, updateCarousel, handleSwipe } from "./functions.js";
+import { recalcOnResize, menuAnimation, miniLogoShow, goToSection2, animatePancarte, updateCarousel, handleSwipe, checkOverflow } from "./functions.js";
 // VAR
 let collapse = true;
 let startY = 0;
@@ -23,6 +23,7 @@ const realisationItems = [
 ];
 let touchStartX = 0;
 let touchEndX = 0;
+let dotParent = document.querySelector("#realisationsContainer");
 
 // EVENTLISTENER 
 document.addEventListener('scroll', (e) => {
@@ -57,12 +58,10 @@ window.addEventListener("touchend", e => {
 window.addEventListener('wheel', (e) => {
     const delta = e.deltaY;
     if (delta > 0) {
-            // lastScrollDirection = 'down';
-            console.log('Scroll vers le bas');
+            // console.log('Scroll vers le bas');
             current = goToSection2(current + 1, isAnimating, panels, current);
     } else if (delta < 0) {
-            // lastScrollDirection = 'up';
-            console.log('Scroll vers le haut');
+            // console.log('Scroll vers le haut');
             current = goToSection2(current - 1, isAnimating, panels, current);
     }
 });
@@ -70,10 +69,10 @@ window.addEventListener('wheel', (e) => {
 window.addEventListener('resize', function(e) {
     AOS.refresh();
     recalcOnResize();
+    checkOverflow(dotParent, dots);
 })
 
 window.addEventListener('click', function(e){
-    console.log(e.target.id);
     if (e.target.id == 'needleNav' || e.target.id == "svgCalque" || e.target.id == "needleCross") {        
         collapse = collapse ? false : true;
         menuAnimation(collapse)
@@ -191,3 +190,5 @@ panels[0].style.opacity = 1
 
 
 updateCarousel(0, isAnimatingC,cards, currentIndex, dots, realisationItems);
+
+checkOverflow(dotParent, dots);
