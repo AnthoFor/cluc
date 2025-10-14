@@ -70,6 +70,7 @@ window.addEventListener('resize', function(e) {
     AOS.refresh();
     recalcOnResize();
     checkOverflow(dotParent, dots);
+    // checkOverflow(document.querySelector("#tarifsContainer"), document.querySelector("#tarifsBox2"))
 })
 
 window.addEventListener('click', function(e){
@@ -192,3 +193,4 @@ panels[0].style.opacity = 1
 updateCarousel(0, isAnimatingC,cards, currentIndex, dots, realisationItems);
 
 checkOverflow(dotParent, dots);
+// checkOverflow(document.querySelector("#tarifsContainer"), document.querySelector("#tarifSeparator"))

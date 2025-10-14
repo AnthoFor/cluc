@@ -37,7 +37,7 @@ body {
 
 /* Aiguille */
 #needleNav {
-    max-height: 8vh;
+    height: 8vh;
     min-height: 50px;
 }
 
@@ -79,7 +79,7 @@ body {
 }
 
 #needleCross {
-    max-height: 8vh;
+    height: 8vh;
     min-height: 50px;
     top: 4%;
     left: 83%;
@@ -285,7 +285,7 @@ body {
 #horairesContainer,
 #accesContainer {
     width: 100%;
-    height: 60%;
+    height: 70%;
 }
 
 #tarifsContainer {
@@ -297,7 +297,8 @@ body {
 
 #tarifsBox1 {
     width: 100%;
-    height: 20%;
+    margin-bottom: 3px;
+    /* height: 20%; */
 }
 
 #tarifsBox1 > p {
@@ -396,6 +397,9 @@ body {
     padding: 1.5vh;
 }
 
+.listeTarifs {
+    gap: 1px;
+}
 .listeTarifs > span > span {
     font-size: clamp(0.5rem, 3.3cqw, 2cqh);
 }
@@ -417,7 +421,7 @@ body {
     font-weight: bold;
     text-transform: uppercase;
     padding-bottom: 0.2vh;
-    font-size: clamp(1rem, 2.8cqw, 1.8cqh);
+    font-size: clamp(0.8rem, 2.8cqw, 1.8cqh);
 }
 
 .dottedLineGreen > span, .dottedLineYellow > span {

@@ -210,27 +210,38 @@ export function animateActiveSection(panel) {
 }
 
 export function checkOverflow(parentSelector, childSelector) {
-    const parent = parentSelector
-    const child = childSelector;
-    if (!parent || !child) return;
-    const parentRect = parent.getBoundingClientRect();
-    const childRect = child[0].getBoundingClientRect();
+    if (!parentSelector || !childSelector) return;
+    const parentRect = parentSelector.getBoundingClientRect();
+    let childRect ;
+    if (childSelector instanceof NodeList) {
+        childRect = childSelector[0].getBoundingClientRect();
+    } else {
+        childRect = childSelector.getBoundingClientRect();
+    }
     const isOverflowing =
     childRect.top < parentRect.top ||
     childRect.left < parentRect.left ||
     childRect.bottom > parentRect.bottom ||
     childRect.right > parentRect.right
-    if (isOverflowing) {
-        child.forEach(element => {
-            element.style.opacity = "0";
+    if (isOverflowing && parentSelector.id == "realisationsContainer") {
+        childSelector.forEach(element => {
+            opactiyChanger(element, 0)
         });
-
         } else {
-        child.forEach(element => {
-            element.style.opacity = "1";
+        childSelector.forEach(element => {
+            opactiyChanger(element, 1)
         })
     }
 }
+
+function opactiyChanger(element, opacity) {
+    element.style.opacity = opacity;
+}
+
+// function fontSizeChanger(element) {
+//     let fontSizeValue = parseFloat(window.getComputedStyle(element).fontSize);
+// }
+
 // Var
 let TxtAtelierClucWidth = document.getElementById('txtAtelierCluc').offsetWidth;
 document.getElementById('txtRetouchesEtCreation').style.width = TxtAtelierClucWidth + 'px';
