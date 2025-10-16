@@ -219,19 +219,23 @@ export function checkOverflow(parentSelector, childSelector) {
         childRect = childSelector.getBoundingClientRect();
     }
     const isOverflowing =
-    childRect.top < parentRect.top ||
-    childRect.left < parentRect.left ||
-    childRect.bottom > parentRect.bottom ||
-    childRect.right > parentRect.right
-    if (isOverflowing && parentSelector.id == "realisationsContainer") {
-        childSelector.forEach(element => {
-            opactiyChanger(element, 0)
-        });
-        } else {
-        childSelector.forEach(element => {
-            opactiyChanger(element, 1)
-        })
-    }
+        childRect.top < parentRect.top ||
+        childRect.left < parentRect.left ||
+        childRect.bottom > parentRect.bottom ||
+        childRect.right > parentRect.right
+    return isOverflowing;
+}
+
+export function removeDots(bloc) {
+    bloc.forEach(element => {
+        opactiyChanger(element, 0)
+    });
+}
+
+export function showDots(bloc) {
+    bloc.forEach(element => {
+        opactiyChanger(element, 1)
+    })
 }
 
 function opactiyChanger(element, opacity) {

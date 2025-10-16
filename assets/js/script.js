@@ -1,4 +1,4 @@
-import { recalcOnResize, menuAnimation, miniLogoShow, goToSection2, animatePancarte, updateCarousel, handleSwipe, checkOverflow } from "./functions.js";
+import { recalcOnResize, menuAnimation, miniLogoShow, goToSection2, animatePancarte, updateCarousel, handleSwipe, checkOverflow, showDots, removeDots } from "./functions.js";
 // VAR
 let collapse = true;
 let startY = 0;
@@ -69,8 +69,7 @@ window.addEventListener('wheel', (e) => {
 window.addEventListener('resize', function(e) {
     AOS.refresh();
     recalcOnResize();
-    checkOverflow(dotParent, dots);
-    // checkOverflow(document.querySelector("#tarifsContainer"), document.querySelector("#tarifsBox2"))
+    checkOverflow(dotParent, dots) ? removeDots(dots) : showDots(dots);
 })
 
 window.addEventListener('click', function(e){
@@ -163,6 +162,7 @@ document.addEventListener("touchend", (e) => {
 	touchEndX = e.changedTouches[0].screenX;
 	currentIndex = handleSwipe(touchStartX, touchEndX, isAnimatingC, cards, currentIndex, dots, realisationItems);
 });
+// END OF EVENTLISTENER
 
 // Permet de faire la même chose qu'AOS sans le decalage
 logoAccueil.classList.add('growing');
@@ -170,8 +170,6 @@ logoAccueil.classList.add('growing');
         logoAccueil.style.maxHeight = "33%";
         logoAccueil.classList.remove('growing');
     }, 800);
-
-
 
 // Initialisation d'AOS
 AOS.init();
@@ -188,9 +186,6 @@ setTimeout(() => {
 
 panels[0].style.opacity = 1
 
-
-
 updateCarousel(0, isAnimatingC,cards, currentIndex, dots, realisationItems);
 
-checkOverflow(dotParent, dots);
-// checkOverflow(document.querySelector("#tarifsContainer"), document.querySelector("#tarifSeparator"))
+checkOverflow(dotParent, dots) ? removeDots(dots) : showDots(dots);
