@@ -29,10 +29,6 @@ body {
     background-size: 30vw auto;
     opacity: 0;
 }
-/* Pour le referencement:  */
-.r-DisplayNone {
-    display: none;
-}
 
 #header {
     height: 10dvh;
