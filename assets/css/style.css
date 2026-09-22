@@ -468,6 +468,11 @@ body {
     font-weight: bold;
 }
 
+#contactFrame > div > a {
+    color: #FFFFFF;
+    font-size: 0.7rem;
+    text-decoration: none;
+}
 /* Realisation carousel */
 
 #realisationsContainer {
