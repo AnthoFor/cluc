@@ -264,8 +264,5 @@ monChemin.attr({
 
 function calcRight(bloc) {
     const rightBorderBloc = bloc.getBoundingClientRect();
-    console.log(rightBorderBloc);
     return rightBorderBloc.right
 }
-
-calcRight(logoAccueil);

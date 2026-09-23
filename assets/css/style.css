@@ -44,7 +44,7 @@ body {
 .positionCustom {
     transform: rotate(-90deg);
     right: 9%;
-    top: 4vh;
+    top: 1vh;
     z-index: 1031;
 }
 
@@ -81,7 +81,7 @@ body {
 #needleCross {
     height: 8vh;
     min-height: 50px;
-    top: 4%;
+    top: 1vh;
     right: 9%;
     transform: rotate(45deg) !important;
     opacity: 0;
