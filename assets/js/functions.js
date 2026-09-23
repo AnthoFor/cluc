@@ -36,16 +36,16 @@ export function goToSection2(index, isAnimating, panels, current) {
 }
 
 export function recalcOnResize() {
-TxtAtelierClucWidth = document.getElementById('txtAtelierCluc').offsetWidth;
-document.getElementById('txtRetouchesEtCreation').style.width = TxtAtelierClucWidth + 'px';
-const rect = needleNav.getBoundingClientRect();
-// Calculer le centre de needleNav
-const centerX = rect.left + rect.width / 2;
-const centerY = rect.top + rect.height / 2;
+    TxtAtelierClucWidth = document.getElementById('txtAtelierCluc').offsetWidth;
+    document.getElementById('txtRetouchesEtCreation').style.width = TxtAtelierClucWidth + 'px';
+    const rect = needleNav.getBoundingClientRect();
+    // Calculer le centre de needleNav
+    const centerX = rect.left + rect.width / 2;
+    const centerY = rect.top + rect.height / 2;
 
-// const distanceRight = window.innerWidth - rect.right;
-kikooDiv.style.left = `${centerX - kikooDiv.offsetWidth / 2}px`;
-kikooDiv.style.top = `${centerY}px`;
+    kikooDiv.style.left = `${centerX - kikooDiv.offsetWidth / 2}px`;
+    kikooDiv.style.top = `${centerY}px`;
+    miniTexteLogoTopLeft.style.left = `${calcRight(logoAccueil) + 10}px`;
 }
 
 export function menuAnimation(collapse) {
@@ -114,6 +114,7 @@ export function miniLogoShow(targetSection) {
         setTimeout(function() {
             header.style.background = "rgba(255, 255, 255, 1)";
             miniTexteLogoTopLeft.style.opacity = "1";
+            miniTexteLogoTopLeft.style.left = `${calcRight(logoAccueil) + 10}px`;
         }, 800);
     }
 }
@@ -259,4 +260,12 @@ let longueurChemin = Snap.path.getTotalLength(monChemin);
 monChemin.attr({
     "stroke-dasharray": longueurChemin + " " + longueurChemin,
     "stroke-dashoffset": longueurChemin
-}); 
+});
+
+function calcRight(bloc) {
+    const rightBorderBloc = bloc.getBoundingClientRect();
+    console.log(rightBorderBloc);
+    return rightBorderBloc.right
+}
+
+calcRight(logoAccueil);
