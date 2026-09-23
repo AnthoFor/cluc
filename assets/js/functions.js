@@ -29,7 +29,7 @@ export function goToSection2(index, isAnimating, panels, current) {
     if (index > 0) {
         animateActiveSection(panels[index]);
     }
-    if (current == 4 ) {
+    if (current == 5 ) {
         animatePancarte();
     } 
     return index;
