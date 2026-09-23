@@ -19,7 +19,9 @@ const realisationItems = [
 	{ name: "Création", role: "Etiquettes à bagages personalisées" },
 	{ name: "Réparation", role: "Manteau sauvé" },
 	{ name: "Création", role: "Furoshiki, emballage cadeau en tissu" },
-	{ name: "Création", role: "Sac à pain" }
+	{ name: "Création", role: "Sac à pain" },
+    { name: "Création", role: "Banane imperméable" },
+    { name: "Réparation", role: "Changement de bout de manche" }
 ];
 let touchStartX = 0;
 let touchEndX = 0;

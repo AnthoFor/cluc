@@ -637,6 +637,7 @@ body {
 	display: flex;
 	justify-content: center;
 	gap: 10px;
+    /* opacity: 0; */
 }
 
 .dot {
