@@ -202,6 +202,7 @@ body {
 .commonFrame {
     height: 100%;
     width: 90%;
+    padding-bottom: 1dvh;
 }
 
 .noshow {
@@ -254,14 +255,17 @@ body {
 
 .sectionTitleLogo {
     width: 90%;
-    margin-top: 11%;
-    height: 17%;
+    margin-top: 15dvh;
+    height: 10dvh;
     background-repeat: no-repeat;
     background-size: contain;
-    background-position: center bottom;
+    background-position: center top;
 }
 #prestationLogo {
     background-image: url('../img/titlePrestations.svg');
+}
+#mariageLogo {
+    background-image: url('../img/titleMariage.svg');
 }
 #tarifsLogo {
     background-image: url('../img/titleTarifs.svg');
@@ -301,7 +305,7 @@ body {
     /* height: 20%; */
 }
 
-#tarifsBox1 > p {
+#tarifsBox1 > p, #mariage > div > div > p {
     text-align: center;
     font-weight: bold;
     text-transform: uppercase;
@@ -340,7 +344,12 @@ body {
     text-transform: uppercase;
     font-size: clamp(0.3rem, 2.8cqw, 1.5cqh);
 }
+#mariage > div > div > div > img {
+    max-width: 45%;
+}
+ {
 
+}
 .dottedLineYellow {
     position: relative;
     z-index: 0;
@@ -497,15 +506,16 @@ body {
 }
 
 .card {
-	position: absolute;
-	width: 100%;
-	height: 90%;
-	background: white;
-	border-radius: 20px;
-	overflow: hidden;
-	box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-	transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-	cursor: pointer;
+    position: absolute;
+    width: 100%;
+    height: 90%;
+    background: white;
+    border: none;
+    border-radius: 20px;
+    overflow: hidden;
+    /* box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15); */
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    cursor: pointer;
 }
 
 .card img {

@@ -93,23 +93,23 @@ window.addEventListener('click', function(e){
     if (e.target.id == 'tarif') {
         collapse = collapse ? false : true;
         menuAnimation(true)
-        current = goToSection2(2, false, panels, current);
+        current = goToSection2(3, false, panels, current);
     }
     if (e.target.id == 'realisation') {
         collapse = collapse ? false : true;
         menuAnimation(true)
-        current = goToSection2(3, false, panels, current);
+        current = goToSection2(4, false, panels, current);
     }
     if (e.target.id == 'horaire') {
         collapse = collapse ? false : true;
         menuAnimation(true)
-        current = goToSection2(4, false, panels, current);
+        current = goToSection2(5, false, panels, current);
         animatePancarte();
     }
     if (e.target.id == 'acces') {
         collapse = collapse ? false : true;
         menuAnimation(true)
-        current = goToSection2(5, false, panels, current);
+        current = goToSection2(6, false, panels, current);
     }
 })
 
