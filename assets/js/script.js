@@ -26,15 +26,18 @@ const realisationItems = [
 let touchStartX = 0;
 let touchEndX = 0;
 let dotParent = document.querySelector("#realisationsContainer");
+let logoStateBig = true;
 
 // EVENTLISTENER 
-document.addEventListener('scroll', (e) => {
-    if (window.scrollY <= 0) {
-        miniLogoShow(1)
-    } else {
-        miniLogoShow(2)
-    }
-});
+// document.addEventListener('scroll', (e) => {
+//     console.log(window.scrollY);
+//     if (window.scrollY <= 0) {
+//         logoStateBig = miniLogoShow(1);
+//     } else {
+//         logoStateBig = miniLogoShow(2);
+//     }
+//     console.log(logoStateBig);
+// });
 
 // empeche le pull to refresh qui empechait de pouvoir remonter dans les sections
 document.addEventListener('touchmove', function(event) {
@@ -92,6 +95,7 @@ window.addEventListener('click', function(e){
         menuAnimation(true)
         current = goToSection2(1, false, panels, current);
     }
+    // Pas de section 2 car presta Mariage en 2.
     if (e.target.id == 'tarif') {
         collapse = collapse ? false : true;
         menuAnimation(true)

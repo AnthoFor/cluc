@@ -103,11 +103,15 @@ export function menuAnimation(collapse) {
 }
 
 export function miniLogoShow(targetSection) {
+    let logoAccueilStateBig;
     if (targetSection == 1) {
         // Remet le logo en gros au milieu
         header.style.background = "transparent";
         logoAccueil.classList.remove('mini-top-left');
         miniTexteLogoTopLeft.style.opacity = "0";
+        logoAccueilStateBig = true;
+        // calcTop(txtAtelierCluc)
+        // logoAccueil.style.top = `${calcTop(txtAtelierCluc) + 10}px`;
     } else {
         // affiche le logo en haut a gauche en petit
         logoAccueil.classList.add('mini-top-left');
@@ -116,7 +120,9 @@ export function miniLogoShow(targetSection) {
             miniTexteLogoTopLeft.style.opacity = "1";
             miniTexteLogoTopLeft.style.left = `${calcRight(logoAccueil) + 10}px`;
         }, 800);
+        logoAccueilStateBig = false;
     }
+    return logoAccueilStateBig;
 }
 
 export function animatePancarte() {
@@ -265,4 +271,10 @@ monChemin.attr({
 function calcRight(bloc) {
     const rightBorderBloc = bloc.getBoundingClientRect();
     return rightBorderBloc.right
+}
+
+function calcTop(bloc) {
+    const topBorderBloc = bloc.getBoundingClientRect()
+    // console.log(txtAtelierCluc.getBoundingClientRect())
+    return topBorderBloc.top
 }
