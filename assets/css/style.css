@@ -35,6 +35,11 @@ body {
     background: transparent;
 }
 
+#logoMouv {
+    height: 40dvh;
+    /* transform: translate(100%, 50%); */
+}
+
 /* Aiguille */
 #needleNav {
     height: 8vh;
